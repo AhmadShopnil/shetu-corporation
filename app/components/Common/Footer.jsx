@@ -68,7 +68,7 @@ const Footer = () => {
                 <span className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                   <Mail className="w-4 h-4 text-primary" />
                 </span>
-                info@agrezen.com
+                example@gmail.com
               </p>
             </div>
           </div>
@@ -153,3 +153,10 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
+
+
+
+
+
