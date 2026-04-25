@@ -8,8 +8,9 @@ export const navItems = [
     { label: "Seeds", href: "/products/seeds" },
     { label: "Others", href: "/products/others" },
   ]},
-  { label: "About Us", href: "#", hasDropdown: true },
+
   { label: "Team", href: "/team", hasDropdown: false },
-  { label: "Blog", href: "#", hasDropdown: true },
-  { label: "Shop", href: "#", hasDropdown: true },
+    { label: "About Us", href: "#", hasDropdown: false },
+  { label: "Blogs", href: "#", hasDropdown: false },
+  // { label: "Shop", href: "#", hasDropdown: true },
 ];
