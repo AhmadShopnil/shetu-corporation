@@ -144,7 +144,7 @@ const Footer = () => {
         <div className="pt-6 text-center">
           <p className="text-sm text-gray-500">
             © 2026 All rights reserved.{" "}
-            <span className="text-primary">Agrezen</span>
+            <span className="text-primary">Shetu Corporation</span>
           </p>
         </div>
       </div>
