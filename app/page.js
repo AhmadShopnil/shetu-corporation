@@ -8,6 +8,7 @@ import AgroExcellence from "./components/Home/AgroExcellence";
 import WhyChooseSection from "./components/Home/WhyChooseSection";
 import SustainableFarming from "./components/Home/SustainableFarming";
 import NewsSection from "./components/Home/NewsSection";
+import OurImpact from "./components/Home/OurImpact";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
       <WhyChooseSection />
       <AgroExcellence />
 
-      {/* <ServicesSection/> */}
+      {/* <ServicesSection /> */}
+      <OurImpact />
       <NewsSection />
       <Footer />
 

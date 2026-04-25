@@ -14,6 +14,12 @@ export const navItems = [
   { label: "Team", href: "/team", hasDropdown: false },
   { label: "About Us", href: "/about", hasDropdown: false },
   { label: "Careers", href: "/career", hasDropdown: false },
-  { label: "Blogs", href: "/blogs", hasDropdown: false },
+  {
+    label: "Media", href: "#", hasDropdown: true, subItems: [
+      { label: "Blogs", href: "/blogs" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "News", href: "/news" },
+    ]
+  },
   // { label: "Shop", href: "#", hasDropdown: true },
 ];
