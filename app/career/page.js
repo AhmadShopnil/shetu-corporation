@@ -199,43 +199,102 @@ export default function CareerPage() {
 
       {/* Contact Us Section */}
       <section className="py-24 px-6 bg-white">
-        <div className="container mx-auto max-w-[800px]">
+        <div className="container mx-auto max-w-[1200px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center"
+            className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Don't see a fit?</h2>
-            <p className="text-gray-600 text-lg leading-relaxed mb-10">
+            <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
               We are always on the lookout for talented individuals. Even if your ideal role isn't listed above, we'd still love to hear from you. Drop us a line and tell us how you can make a difference.
             </p>
-            <div className="bg-gray-50 p-10 rounded-3xl border border-gray-100 text-left shadow-sm">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Contact Us</h3>
-              <form className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Name</label>
-                    <input type="text" className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#9DCC46] transition-shadow bg-white" placeholder="John Doe" />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Email</label>
-                    <input type="email" className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#9DCC46] transition-shadow bg-white" placeholder="john@example.com" />
-                  </div>
-                </div>
-                <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">Message</label>
-                  <textarea rows="4" className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#9DCC46] transition-shadow bg-white" placeholder="Tell us about yourself..."></textarea>
-                </div>
-                <div className="text-center">
-                  <button type="button" className="px-10 py-4 bg-[#9DCC46] text-gray-900 rounded-full font-bold text-lg hover:bg-gray-900 hover:text-white transition-colors w-full md:w-auto">
-                    Send Message
-                  </button>
-                </div>
-              </form>
-            </div>
           </motion.div>
+
+          <div className="flex flex-col lg:flex-row gap-12">
+            {/* Address & Map */}
+            <motion.div 
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="lg:w-1/3 space-y-8"
+            >
+              <div className="bg-gray-50 p-8 rounded-3xl border border-gray-100 shadow-sm">
+                <div className="w-12 h-12 bg-[#9DCC46]/20 text-[#7a9e36] rounded-xl flex items-center justify-center mb-6">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">OUR HEAD OFFICE</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  House 24, Road 14, Sector 6,<br />
+                  Uttara Model Town, Dhaka 1230,<br />
+                  Bangladesh
+                </p>
+                <div className="mt-6">
+                  <a href="https://maps.app.goo.gl/B46Bnd6iK73Yd4A67" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#7a9e36] font-bold hover:underline">
+                    View on Google Maps
+                    <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                  </a>
+                </div>
+              </div>
+              
+              <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-sm h-64 relative bg-gray-200">
+                <iframe 
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.7495514659976!2d90.3957262!3d23.8630325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c411c5d0f5c1%3A0x6b2e1a3bc4d05466!2sHouse%2024%2C%20Road%2014%2C%20Sector%206%2C%20Uttara%20Model%20Town%2C%20Dhaka%201230!5e0!3m2!1sen!2sbd!4v1714000000000!5m2!1sen!2sbd" 
+                  className="absolute inset-0 w-full h-full border-0"
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                ></iframe>
+              </div>
+            </motion.div>
+
+            {/* Form */}
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="lg:w-2/3"
+            >
+              <div className="bg-gray-50 p-10 rounded-3xl border border-gray-100 shadow-sm">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Us</h3>
+                <form className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">First Name</label>
+                      <input type="text" className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#9DCC46] transition-shadow bg-white" placeholder="John" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">Last Name</label>
+                      <input type="text" className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#9DCC46] transition-shadow bg-white" placeholder="Doe" />
+                    </div>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">Email</label>
+                      <input type="email" className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#9DCC46] transition-shadow bg-white" placeholder="john@example.com" />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">Contact No</label>
+                      <input type="text" className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#9DCC46] transition-shadow bg-white" placeholder="+880 1234-567890" />
+                    </div>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-bold text-gray-700 mb-2">Message</label>
+                    <textarea rows="4" className="w-full px-5 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-[#9DCC46] transition-shadow bg-white" placeholder="Tell us about yourself..."></textarea>
+                  </div>
+                  <div className="text-left">
+                    <button type="button" className="px-10 py-4 bg-[#9DCC46] text-gray-900 rounded-full font-bold text-lg hover:bg-gray-900 hover:text-white transition-colors w-full md:w-auto">
+                      Send Message
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

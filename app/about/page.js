@@ -160,7 +160,7 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership Section */}
-      <section className="py-24 px-6 bg-gray-50">
+      {/* <section className="py-24 px-6 bg-gray-50">
         <div className="container mx-auto max-w-[1200px]">
           <div className="text-center mb-16">
             <motion.h2
@@ -207,7 +207,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </main>

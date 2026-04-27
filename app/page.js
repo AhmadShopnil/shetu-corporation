@@ -9,20 +9,30 @@ import WhyChooseSection from "./components/Home/WhyChooseSection";
 import SustainableFarming from "./components/Home/SustainableFarming";
 import NewsSection from "./components/Home/NewsSection";
 import OurImpact from "./components/Home/OurImpact";
+import BusinessVerticals from "./components/Home/BusinessVerticals";
+import PartnersSection from "./components/Home/PartnersSection";
+import ContactSection from "./components/Home/ContactSection";
 
 export default function Home() {
   return (
     <div className="">
       <HomeHeader />
+
       <HeroSection />
-      <AboutSection />
-      <SustainableFarming />
-      <WhyChooseSection />
-      <AgroExcellence />
+      <NewsSection />
+      <OurImpact />
+
+      <PartnersSection />
+      <BusinessVerticals />
+      <ContactSection />
+      {/* <AboutSection /> */}
+      {/* <SustainableFarming /> */}
+      {/* <WhyChooseSection /> */}
+      {/* <AgroExcellence /> */}
 
       {/* <ServicesSection /> */}
-      <OurImpact />
-      <NewsSection />
+
+
       <Footer />
 
     </div>

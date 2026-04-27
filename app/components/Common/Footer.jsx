@@ -57,14 +57,14 @@ const Footer = () => {
             </Link>
 
             <div className="space-y-4">
-              <p className="flex items-center gap-3 text-sm text-gray-300">
+              <p className="flex items-center gap-3 text-[15px] md:text-base text-gray-300">
                 <span className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                   <Phone className="w-4 h-4 text-primary" />
                 </span>
                 +1 (528) 456-7592
               </p>
 
-              <p className="flex items-center gap-3 text-sm text-gray-300">
+              <p className="flex items-center gap-3 text-[15px] md:text-base text-gray-300">
                 <span className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
                   <Mail className="w-4 h-4 text-primary" />
                 </span>
@@ -75,7 +75,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <h4 className="text-xl lg:text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <span className="w-3 h-3 bg-primary rounded-full"></span>
               Our Services
             </h4>
@@ -91,7 +91,7 @@ const Footer = () => {
                 <li key={link}>
                   <a
                     href="#"
-                    className="text-sm text-gray-400 hover:text-primary transition flex items-center gap-2"
+                    className="text-[15px] md:text-base text-gray-400 hover:text-primary transition flex items-center gap-2"
                   >
                     <span className="text-primary">↗</span>
                     {link}
@@ -103,7 +103,7 @@ const Footer = () => {
 
           {/* Newsletter + Social */}
           <div>
-            <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
+            <h4 className="text-xl lg:text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <span className="w-3 h-3 bg-primary rounded-full"></span>
               Newsletter
             </h4>
@@ -112,14 +112,14 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Email Address"
-                className="flex-1 px-5 py-3 rounded-l-full bg-white/5 border border-white/10 text-white text-sm focus:outline-none focus:border-primary"
+                className="flex-1 px-5 py-3 rounded-l-full bg-white/5 border border-white/10 text-white text-base focus:outline-none focus:border-primary"
               />
               <button className="px-5 py-3 rounded-r-full bg-[#8ACB1A] hover:bg-[#7AB316] transition cursor-pointer">
                 <span className="text-white">→</span>
               </button>
             </div>
 
-            <p className="text-sm text-gray-500 mb-6">
+            <p className="text-[15px] md:text-base text-gray-500 mb-6 leading-relaxed">
               Rooted in natures care, we grow with integrity and harvest a healthier world.
             </p>
 
@@ -142,7 +142,7 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-6 text-center">
-          <p className="text-sm text-gray-500">
+          <p className="text-[15px] text-gray-500">
             © 2026 All rights reserved.{" "}
             <span className="text-primary">Shetu Corporation</span>
           </p>
