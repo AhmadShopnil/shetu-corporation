@@ -24,7 +24,7 @@ export const businessVerticalsData = [
     shortTitle: "Distribution & Marketing Network",
     shortDescription: "Shetu Corporation operates a widespread distribution network across Bangladesh, supported by multiple regional offices and warehouses...",
     description: "Shetu Corporation operates a widespread distribution network across Bangladesh, supported by multiple regional offices and warehouses. This vertical focuses on ensuring efficient supply chain management, delivering agrochemical products to dealers, retailers, and farmers nationwide through a strong logistics and marketing infrastructure.",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8ed7c80a02?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 4,

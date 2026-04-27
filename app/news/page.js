@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import Header from "../components/Common/Header";
 import Footer from "../components/Common/Footer";
 import { motion } from "motion/react";
@@ -114,10 +115,10 @@ export default function NewsPage() {
                   <p className="text-gray-500 text-lg leading-relaxed mb-8 flex-grow">
                     {news.excerpt}
                   </p>
-                  <button className="inline-flex items-center text-gray-900 font-bold uppercase tracking-widest text-sm hover:text-[#9DCC46] transition-colors self-start border-b-2 border-transparent hover:border-[#9DCC46] pb-1">
+                  <Link href={`/news/${news.id}`} className="inline-flex items-center text-gray-900 font-bold uppercase tracking-widest text-sm hover:text-[#9DCC46] transition-colors self-start border-b-2 border-transparent hover:border-[#9DCC46] pb-1">
                     Read Full Story
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                  </button>
+                  </Link>
                 </div>
               </motion.div>
             ))}

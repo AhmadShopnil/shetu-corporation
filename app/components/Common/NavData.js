@@ -11,7 +11,7 @@ export const navItems = [
       // { label: "Others", href: "/products/others" },
     ]
   },
-  { label: "Careers", href: "/career", hasDropdown: false },
+  { label: "Career", href: "/career", hasDropdown: false },
   // { label: "Team", href: "/team", hasDropdown: false },
 
 

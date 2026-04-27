@@ -4,6 +4,7 @@ import Header from "../components/Common/Header";
 import Footer from "../components/Common/Footer";
 import { motion } from "motion/react";
 import Link from "next/link";
+import { Sprout, Heart, TrendingUp, Clock, Users, Globe } from "lucide-react";
 
 const jobOpenings = [
   {
@@ -36,67 +37,93 @@ const jobOpenings = [
   }
 ];
 
+// const benefits = [
+//   {
+//     title: "Join a purpose-driven organization ",
+//     description: "Work with cutting-edge agro-technologies and contribute to sustainable farming practices that change the world.",
+//     icon: (
+//       <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+//       </svg>
+//     )
+//   },
+//   {
+//     title: "Help transform Bangladesh’s agriculture sector",
+//     description: "Comprehensive health coverage, mental wellness programs, and access to fresh, organic farm produce.",
+//     icon: (
+//       <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+//       </svg>
+//     )
+//   },
+//   {
+//     title: "Build sustainable food systems ",
+//     description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
+//     icon: (
+//       <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+//       </svg>
+//     )
+//   }
+//   ,
+//   {
+//     title: "Comprehensive benefits and work life balance  ",
+//     description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
+//     icon: (
+//       <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+//       </svg>
+//     )
+//   }
+//   ,
+//   {
+//     title: "Create real impact in communities ",
+//     description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
+//     icon: (
+//       <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+//       </svg>
+//     )
+//   }
+//   ,
+//   {
+//     title: "Work with a passionate, committed team",
+//     description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
+//     icon: (
+//       <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+//         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+//       </svg>
+//     )
+//   }
+
+// ];
+
 const benefits = [
   {
-    title: "Join a purpose-driven organization ",
-    description: "Work with cutting-edge agro-technologies and contribute to sustainable farming practices that change the world.",
-    icon: (
-      <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    )
+    title: "Join a purpose-driven organization",
+    icon: <Sprout className="w-8 h-8 text-[#9DCC46]" />
   },
   {
     title: "Help transform Bangladesh’s agriculture sector",
-    description: "Comprehensive health coverage, mental wellness programs, and access to fresh, organic farm produce.",
-    icon: (
-      <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    )
+    icon: <Heart className="w-8 h-8 text-[#9DCC46]" />
   },
   {
-    title: "Build sustainable food systems ",
-    description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
-    icon: (
-      <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    )
-  }
-  ,
+    title: "Build sustainable food systems",
+    icon: <TrendingUp className="w-8 h-8 text-[#9DCC46]" />
+  },
   {
-    title: "Comprehensive benefits and work life balance  ",
-    description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
-    icon: (
-      <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    )
-  }
-  ,
+    title: "Comprehensive benefits and work life balance",
+    icon: <Clock className="w-8 h-8 text-[#9DCC46]" />
+  },
   {
-    title: "Create real impact in communities ",
-    description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
-    icon: (
-      <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    )
-  }
-  ,
+    title: "Create real impact in communities",
+    icon: <Globe className="w-8 h-8 text-[#9DCC46]" />
+  },
   {
     title: "Work with a passionate, committed team",
-    description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
-    icon: (
-      <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-      </svg>
-    )
+    icon: <Users className="w-8 h-8 text-[#9DCC46]" />
   }
-
 ];
-
 export default function CareerPage() {
   return (
     <main className="min-h-screen bg-white">
@@ -109,7 +136,7 @@ export default function CareerPage() {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight"
         >
-          Careers
+          Career
         </motion.h1>
         {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -155,9 +182,12 @@ export default function CareerPage() {
                 viewport={{ once: true }}
                 className="p-8 border border-gray-100 rounded-lg hover:shadow-xl transition-shadow bg-gray-50"
               >
-                <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6">
+                <div className="w-16 h-16 bg-[#9DCC46]/10 text-[#9DCC46] rounded-2xl flex items-center justify-center mb-6">
+  {benefit.icon}
+</div>
+                {/* <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6">
                   {benefit.icon}
-                </div>
+                </div> */}
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
                 {/* <p className="text-gray-600 leading-relaxed">
                   {benefit.description}

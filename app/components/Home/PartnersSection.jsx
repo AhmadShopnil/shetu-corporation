@@ -14,7 +14,7 @@ export default function PartnersSection() {
 
       <div className="container mx-auto max-w-[1200px] px-6">
         {/* "Wish to partner with us?" Section */}
-        <div className="bg-[#f8f9fa] rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden">
+        <div className="bg-[#f8f9fa] rounded-3xl p-8 md:p-16 relative overflow-hidden">
           {/* Decorative Background Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#9DCC46]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0a1f11]/5 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>

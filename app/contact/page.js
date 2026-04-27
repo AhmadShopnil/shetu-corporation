@@ -13,7 +13,7 @@ export default function ContactPage() {
       <HomeHeader />
 
       {/* Hero Section */}
-      <section className="relative h-[450px] md:h-[550px] w-full flex items-center justify-center pt-20">
+      <section className="relative h-[450px] md:h-[550px] w-full flex items-center justify-center py-20">
         <Image
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
           alt="Modern Office Building - Contact Us"

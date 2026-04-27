@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,9 +10,12 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { businessVerticalsData } from "../../data/businessVerticals";
-import { ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function BusinessVerticals() {
+  const [prevEl, setPrevEl] = useState(null);
+  const [nextEl, setNextEl] = useState(null);
+
   return (
     <section className="py-32 px-6 bg-[#0a1f11] relative overflow-hidden">
       {/* Background aesthetic elements */}
@@ -51,7 +55,12 @@ export default function BusinessVerticals() {
             viewport={{ once: true }}
           >
             <div className="flex gap-3">
-              {/* Custom Swiper Navigation Buttons will be handled by Swiper, but we can style the container */}
+              <button ref={(node) => setPrevEl(node)} className="vertical-prev w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#9DCC46] hover:border-[#9DCC46] hover:text-gray-900 transition-all duration-300 backdrop-blur-sm group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+              </button>
+              <button ref={(node) => setNextEl(node)} className="vertical-next w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#9DCC46] hover:border-[#9DCC46] hover:text-gray-900 transition-all duration-300 backdrop-blur-sm group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
             </div>
           </motion.div>
         </div>
@@ -68,6 +77,10 @@ export default function BusinessVerticals() {
             modules={[Navigation, Pagination, Autoplay]}
             spaceBetween={24}
             slidesPerView={1}
+            navigation={{
+              prevEl: prevEl,
+              nextEl: nextEl,
+            }}
             breakpoints={{
               640: {
                 slidesPerView: 2,

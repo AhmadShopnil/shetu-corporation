@@ -34,7 +34,7 @@ export default function ContactSection() {
   return (
     <section className="py-24 px-6 bg-[#f8f9fa] relative overflow-hidden" id="contact">
       {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-[#0a1f11] rounded-l-[100px] opacity-5 md:block hidden"></div>
+      {/* <div className="absolute top-0 right-0 w-1/3 h-full bg-[#0a1f11] rounded-l-[100px] opacity-5 md:block hidden"></div> */}
       
       <div className="container mx-auto max-w-[1200px] relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
@@ -85,7 +85,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg md:text-xl font-semibold mb-1">Phone</h4>
-                  <p className="text-sm md:text-base text-gray-300">+880 2 1234 5678</p>
+                  <p className="text-sm md:text-base text-gray-300">+880-2-7913081</p>
                 </div>
               </div>
 
@@ -106,8 +106,8 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-lg md:text-xl font-semibold mb-1">Office Location</h4>
                   <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                    Shetu Tower, 123 Agri Avenue,<br />
-                    Dhaka 1215, Bangladesh
+                   
+                    House 24, Road 14, Sector 6, Uttara Model Town, Dhaka 1230, Bangladesh
                   </p>
                 </div>
               </div>

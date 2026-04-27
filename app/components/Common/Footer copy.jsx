@@ -13,15 +13,14 @@ import {
   FaTwitter,
 } from "react-icons/fa";
 import Link from "next/link";
-import { FaX } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="relative pt-20 pb-14 overflow-hidden">
+    <footer className="relative pt-20 pb-8 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
         <Image
-          src="/images/footer.jpeg"
+          src={heroImg}
           alt="footer-bg"
           fill
           className="object-cover"
@@ -38,18 +37,7 @@ const Footer = () => {
 
           {/* Logo + Contact */}
           <div>
-            <Link href="/" 
-            className="flex items-center gap-2 -mt-1 mb-2">
-              <Image
-                src="/images/logomain.png"
-                alt="Shetu Corporation Logo"
-                width={300}
-                height={80}
-                priority
-              />
-
-            </Link>
-            {/* <Link href="/" className="flex items-center gap-2 mb-6">
+            <Link href="/" className="flex items-center gap-2 mb-6">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                 <circle
                   cx="16"
@@ -66,7 +54,7 @@ const Footer = () => {
               <span className="text-2xl font-bold text-white">
                 Shetu COrporation
               </span>
-            </Link> */}
+            </Link>
 
             <div className="space-y-4">
               <p className="flex items-center gap-3 text-[15px] md:text-base text-gray-300">
@@ -81,14 +69,6 @@ const Footer = () => {
                   <Mail className="w-4 h-4 text-primary" />
                 </span>
                 info@shetucorporation.com
-               
-              </p>
-                 <p className="flex items-center gap-3 text-[15px] md:text-base text-gray-300">
-                <span className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center">
-                  <FaX className="w-4 h-4 text-primary" />
-                </span>
-               
-                Fax: +880-2-8829262, 7913085
               </p>
             </div>
           </div>
@@ -126,28 +106,24 @@ const Footer = () => {
           <div>
             <h4 className="text-xl lg:text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <span className="w-3 h-3 bg-primary rounded-full"></span>
-              Media
+              Quick Links
             </h4>
 
             <ul className="space-y-3">
               {[
-                { label: "Blogs", href: "/blogs", hasDropdown: false },
-                { label: "Gallery", href: "/gallery", hasDropdown: false },
-                { label: "News", href: "/news", hasDropdown: false },
-
-                // { label: "Home", href: "/", hasDropdown: false },
-                // { label: "About Us", href: "/about", hasDropdown: false },
-                // { label: "Career", href: "/career", hasDropdown: false },
-                // {
-                //   label: "Media",
-                //   href: "#",
-                //   hasDropdown: true,
-                //   subItems: [
-                //     { label: "Blogs", href: "/blogs" },
-                //     { label: "Gallery", href: "/gallery" },
-                //     { label: "News", href: "/news" },
-                //   ],
-                // },
+                { label: "Home", href: "/", hasDropdown: false },
+                { label: "About Us", href: "/about", hasDropdown: false },
+                { label: "Career", href: "/career", hasDropdown: false },
+                {
+                  label: "Media",
+                  href: "#",
+                  hasDropdown: true,
+                  subItems: [
+                    { label: "Blogs", href: "/blogs" },
+                    { label: "Gallery", href: "/gallery" },
+                    { label: "News", href: "/news" },
+                  ],
+                },
               ].map((link, index) => (
                 <li key={index}>
                   <a
@@ -181,7 +157,7 @@ const Footer = () => {
             </div>
 
             <p className="text-[15px] md:text-base text-gray-500 mb-6 leading-relaxed">
-              Rooted in natures care, we grow with integrity and harvest a healthier .
+              Rooted in natures care, we grow with integrity and harvest a healthier world.
             </p>
 
             {/* Social Icons */}
