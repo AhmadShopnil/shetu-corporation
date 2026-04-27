@@ -3,16 +3,12 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowRight, Briefcase, Mail } from "lucide-react";
-
-// Placeholder data for logos (using simple names for now)
-const partnerLogos = [
-  "GlobalAgri", "EcoFarms", "NatureTech", "HarvestCorp", "AgroSolutions", "GreenFields", "BioCrop", "FarmTech"
-];
+import PartnerSlider from "./PartnerSlider";
 
 export default function PartnersSection() {
   return (
-    <section className="py-24 px-6 bg-white overflow-hidden">
-      <div className="container mx-auto max-w-[1200px]">
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="container mx-auto max-w-[1200px] px-6">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
@@ -34,41 +30,12 @@ export default function PartnersSection() {
           </motion.div>
         </div>
 
-        {/* Continuous Logo Carousel (Infinite Marquee) */}
-        <div className="relative mb-32 -mx-6 px-6">
-          {/* Gradient Edges for fade effect */}
-          <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r from-white to-transparent z-10"></div>
-          <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l from-white to-transparent z-10"></div>
+      </div>
 
-          <div className="flex overflow-hidden group">
-            {/* Double the list for seamless loop */}
-            <div className="flex space-x-16 md:space-x-24 animate-marquee group-hover:[animation-play-state:paused] py-8">
-              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 flex items-center justify-center w-40 h-20 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                >
-                  <span className="text-2xl font-bold text-gray-400 hover:text-[#9DCC46] transition-colors">
-                    {logo}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <div className="flex space-x-16 md:space-x-24 animate-marquee group-hover:[animation-play-state:paused] py-8 absolute top-0" aria-hidden="true" style={{ left: "100%" }}>
-              {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-                <div
-                  key={`copy-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center w-40 h-20 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                >
-                  <span className="text-2xl font-bold text-gray-400 hover:text-[#9DCC46] transition-colors">
-                    {logo}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+      {/* Continuous Logo Carousel (Infinite Marquee) - Full Width */}
+      <PartnerSlider />
 
+      <div className="container mx-auto max-w-[1200px] px-6">
         {/* "Wish to partner with us?" Section */}
         <div className="bg-[#f8f9fa] rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden">
           {/* Decorative Background Elements */}
@@ -148,20 +115,6 @@ export default function PartnersSection() {
           </div>
         </div>
       </div>
-
-      <style jsx global>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-      `}</style>
     </section>
   );
 }

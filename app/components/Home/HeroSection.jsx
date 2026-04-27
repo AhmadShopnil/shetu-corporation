@@ -3,7 +3,8 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import heroImg from "@/assets/hero-farmer.jpg";
-import { Sprout, Leaf, TreePine } from "lucide-react"; const features = [
+import { Sprout, Leaf, TreePine } from "lucide-react"; import Link from "next/link";
+const features = [
   { icon: Sprout, label: "Healthy Soil\nSolutions" },
   { icon: TreePine, label: "Pure Organic\nGrowth" },
   { icon: Leaf, label: "Nature-Driven\nInnovation" },
@@ -59,7 +60,7 @@ const HeroSection = () => {
             className="flex items-center gap-2 text-[#71AD1E] font-body text-sm font-semibold uppercase tracking-widest mb-5"
           >
             <Leaf className="w-5 h-5" />
-            Agriculture & Organic Farms
+            Sustainable Agriculture
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -76,7 +77,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-gray-200  font-body text-base max-w-lg mb-8 leading-relaxed"
           >
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.
+            Since its inception in 1969, Shetu Corporation Limited has been at the forefront of the crop protection business in Bangladesh, continuing to deliver innovative solutions of the highest quality.
           </motion.p>
           <motion.a
             initial={{ opacity: 0, scale: 0.9 }}
@@ -88,7 +89,9 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-body font-semibold text-sm md:text-base transition-all
              duration-300 border border-gray-300 text-gray-900 bg-[#DCE25A] hover:border-primary"
           >
-            Explore More
+            <Link href="/about" className="text-gray-900 hover:text-gray-700 transition-colors duration-300">
+              Explore More
+            </Link>
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M7 17L17 7M17 7H7M17 7V17" />
             </svg>
