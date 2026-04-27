@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "motion/react";
 import heroImg from "@/assets/hero-farmer.jpg";
-import { Sprout, Leaf, TreePine } from "lucide-react";const features = [
+import { Sprout, Leaf, TreePine } from "lucide-react"; const features = [
   { icon: Sprout, label: "Healthy Soil\nSolutions" },
   { icon: TreePine, label: "Pure Organic\nGrowth" },
   { icon: Leaf, label: "Nature-Driven\nInnovation" },
@@ -46,13 +46,13 @@ const HeroSection = () => {
       </div>
 
       <div className="relative z-10 container mx-auto px-8  flex flex-col justify-between h-full pt-52 pb-16">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-2xl"
         >
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -61,15 +61,16 @@ const HeroSection = () => {
             <Leaf className="w-5 h-5" />
             Agriculture & Organic Farms
           </motion.p>
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6"
+            className="font-heading text-5xl md:text-6xl lg:text-6xl font-bold text-white leading-[1.1] mb-6"
           >
-            Rooted in Nature,<br />Growing the Future
+            {/* Rooted in Nature,<br />Growing the Future */}
+            From Farmers’ Fields <br /> to the Nation’s Table
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -96,8 +97,8 @@ const HeroSection = () => {
 
         <div className="flex gap-12 justify-end mt-auto">
           {features.map((f, i) => (
-            <motion.div 
-              key={i} 
+            <motion.div
+              key={i}
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 + (i * 0.2) }}
