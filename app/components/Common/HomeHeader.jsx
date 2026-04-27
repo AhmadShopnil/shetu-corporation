@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { navItems } from "./NavData";
+import Image from "next/image";
 
 const HomeHeader = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -29,6 +30,18 @@ const HomeHeader = () => {
 
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/logo4.png" 
+            alt="Shetu Corporation Logo"
+            width={80}
+            height={80}
+            priority
+          />
+          <span className="text-xl uppercase font-bold text-white">
+            Shetu Corporation
+          </span>
+        </Link>
+        {/* <Link href="/" className="flex items-center gap-2">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
             <circle cx="16" cy="16" r="14" fill="hsl(82,77%,45%)" fillOpacity="0.2" />
             <path d="M16 6C16 6 10 12 10 18C10 24 16 26 16 26C16 26 22 24 22 18C22 12 16 6 16 6Z" fill="hsl(82,77%,45%)" />
@@ -38,7 +51,7 @@ const HomeHeader = () => {
           <span className={`text-2xl font-bold ${textColor}`}>
             Shetu Corporation
           </span>
-        </Link>
+        </Link> */}
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">

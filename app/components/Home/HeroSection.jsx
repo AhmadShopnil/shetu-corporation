@@ -85,12 +85,12 @@ const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.8 }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            href="#"
+            href="/about"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-body font-semibold text-sm md:text-base transition-all
              duration-300 border border-gray-300 text-gray-900 bg-[#DCE25A] hover:border-primary"
           >
             <Link href="/about" className="text-gray-900 hover:text-gray-700 transition-colors duration-300">
-              Explore More
+              Explore 
             </Link>
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M7 17L17 7M17 7H7M17 7V17" />

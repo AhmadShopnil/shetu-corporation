@@ -77,24 +77,25 @@ const Footer = () => {
           <div>
             <h4 className="text-xl lg:text-2xl font-bold text-white mb-6 flex items-center gap-2">
               <span className="w-3 h-3 bg-primary rounded-full"></span>
-              Our Services
+              Our Products
             </h4>
 
             <ul className="space-y-3">
               {[
-                "Digital Farm Support",
-                "Nature-Based Farming",
-                "Agri-Tech Innovations",
-                "Eco-Friendly Farming",
-                "Organic Farm Solutions",
-              ].map((link) => (
-                <li key={link}>
+      { label: "Crop Protection", href: "/products/crop-protection" },
+      { label: "Insecticide", href: "/products/insecticide" },
+      { label: "Fungicide", href: "/products/fungicide" },
+      { label: "Herbicide", href: "/products/herbicide" },
+      { label: "Seeds", href: "/products/seeds" },
+      // { label: "Others", href: "/products/others" },
+    ].map((link,index) => (
+                <li key={index}>
                   <a
-                    href="#"
+                    href={link.href}
                     className="text-[15px] md:text-base text-gray-400 hover:text-primary transition flex items-center gap-2"
                   >
                     <span className="text-primary">↗</span>
-                    {link}
+                    {link.label}
                   </a>
                 </li>
               ))}

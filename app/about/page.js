@@ -4,6 +4,7 @@ import Image from "next/image";
 import Header from "../components/Common/Header";
 import Footer from "../components/Common/Footer";
 import { motion } from "motion/react";
+import Teams from "../components/LeaderShip/Teams";
 
 const leadershipData = [
   {
@@ -46,14 +47,14 @@ export default function AboutPage() {
         >
           About Us
         </motion.h1>
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-xl text-gray-500 mt-6 max-w-2xl mx-auto"
         >
           Pioneering sustainable agriculture for a better tomorrow.
-        </motion.p>
+        </motion.p> */}
       </section>
 
       {/* Overview Section */}
@@ -69,11 +70,12 @@ export default function AboutPage() {
             <div className="w-full lg:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Overview</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
-                Welcome to our company, a leader in modern, sustainable agriculture. Our journey began with a simple idea: to harmonize farming practices with nature, ensuring that we give back to the earth as much as we take from it.
+               
+               Since 1969, Shetu Corporation has stood at the forefront of Bangladesh’s agricultural evolution—fueling growth, supporting farmers, and feeding the nation. Guided by the vision “From Farmers’ Fields to the Nation’s Table,” we provide innovative solutions across crops, livestock, and farm services, building a resilient and sustainable food chain for generations ahead. 
               </p>
-              <p className="text-gray-600 text-lg leading-relaxed">
+              {/* <p className="text-gray-600 text-lg leading-relaxed">
                 Today, we stand at the forefront of the agro-industry, utilizing advanced techniques to produce high-quality yields while drastically reducing our environmental footprint. We believe in transparency, innovation, and a commitment to the communities we serve.
-              </p>
+              </p> */}
             </div>
             <div className="w-full lg:w-1/2">
               <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden bg-gray-200">
@@ -109,7 +111,8 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
               <p className="text-gray-600 text-lg leading-relaxed">
-                To create a global agricultural ecosystem where innovation meets sustainability, ensuring food security for future generations without compromising the planet's ecological balance.
+               Our mission at Shetu Corporation Limited is to empower farmers with innovative, environmentally friendly agricultural solutions, fostering sustainable growth and prosperity in Bangladesh's agricultural sector.
+
               </p>
             </motion.div>
 
@@ -127,7 +130,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
               <p className="text-gray-600 text-lg leading-relaxed">
-                To empower farmers with cutting-edge technologies and sustainable practices, bridging the gap between nature and modern agriculture to cultivate a healthier, greener, and more prosperous world.
+              We envision Shetu Corporation Limited as a leading force in Bangladeshs agriculture industry, renowned for our commitment to excellence, integrity, and environmental stewardship.
               </p>
             </motion.div>
           </div>
@@ -146,18 +149,22 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Our Story</h2>
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed text-left">
               <p>
-                What started as a small, family-owned farm has blossomed into a pioneering force in the agro-industry. We realized early on that traditional farming methods were taking a toll on the land we so deeply cherished.
+             Shetu Corporation, established in 1969, is built on a rich legacy shaped by its visionary founder, late Giasuddin Chowdhury. Beginning his entrepreneurial journey at just 15 during World War II, he went on to play a pioneering role across multiple industries in Bangladesh, laying the foundation for a diversified and forward-thinking enterprise.
+Over the decades, Shetu Corporation evolved into a leading name in agriculture, particularly in crop protection, after operating across sectors such as machinery, fisheries, chemicals, and exports. Under the leadership of late Managing Director Mahtabuddin Chowdhury, the company strengthened its reputation for quality, integrity, and trust among farmers and stakeholders nationwide. His commitment to excellence and social impact continues to guide the company’s values today.
+A pioneer in agrochemicals, Shetu established one of the country’s earliest formulation plants, reinforcing its role in advancing Bangladesh’s agricultural productivity. Today, the company remains dedicated to empowering farmers and sustaining the nation’s food chain, while upholding the legacy of innovation, ethics, and long-term impact.
+
               </p>
-              <p>
+              {/* <p>
                 Driven by a passion to make a difference, we embarked on a journey to discover methods that could heal the earth while providing bountiful harvests. Countless experiments, late nights, and collaborations with environmental scientists led us to our breakthrough in sustainable agro-mechanics.
               </p>
               <p>
                 Today, we aren't just a business; it's a movement. We are proud to share our story of resilience and innovation with our community, proving that harmony between agriculture and nature is not just a dream, but a viable, profitable reality.
-              </p>
+              </p> */}
             </div>
           </motion.div>
         </div>
       </section>
+      <Teams/>
 
       {/* Leadership Section */}
       {/* <section className="py-24 px-6 bg-gray-50">

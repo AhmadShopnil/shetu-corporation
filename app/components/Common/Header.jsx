@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { navItems } from "./NavData";
+import Image from "next/image";
 
 const Header = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -13,7 +14,7 @@ const Header = () => {
       <div className="mx-auto flex items-center justify-between py-4 px-4 md:px-10">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        {/* <Link href="/" className="flex items-center gap-2">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
             <circle cx="16" cy="16" r="14" fill="hsl(82,77%,45%)" fillOpacity="0.2" />
             <path d="M16 6C16 6 10 12 10 18C10 24 16 26 16 26C16 26 22 24 22 18C22 12 16 6 16 6Z" fill="hsl(82,77%,45%)" />
@@ -21,6 +22,19 @@ const Header = () => {
             <path d="M16 10C18 14 20 16 22 18" stroke="hsl(100,50%,30%)" strokeWidth="1.5" fill="none" />
           </svg>
           <span className="text-2xl font-bold text-black">
+            Shetu Corporation
+          </span>
+        </Link> */}
+       {/* Logo */}
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/logo4.png" 
+            alt="Shetu Corporation Logo"
+            width={80}
+            height={80}
+            priority
+          />
+          <span className="text-xl uppercase font-bold text-black">
             Shetu Corporation
           </span>
         </Link>
@@ -77,10 +91,9 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div 
-        className={`lg:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 transition-all duration-300 ease-in-out origin-top overflow-hidden ${
-          mobileOpen ? "max-h-[85vh] opacity-100 border-t" : "max-h-0 opacity-0 border-t-0"
-        }`}
+      <div
+        className={`lg:hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100 transition-all duration-300 ease-in-out origin-top overflow-hidden ${mobileOpen ? "max-h-[85vh] opacity-100 border-t" : "max-h-0 opacity-0 border-t-0"
+          }`}
       >
         <div className="px-6 py-6 overflow-y-auto max-h-[85vh] flex flex-col gap-2">
           {navItems.map((item) => (
@@ -94,7 +107,7 @@ const Header = () => {
                   {item.label}
                 </Link>
                 {item.subItems && (
-                  <button 
+                  <button
                     onClick={() => {
                       const el = document.getElementById(`mobile-sub-std-${item.label}`);
                       el.classList.toggle('max-h-0');
@@ -110,10 +123,10 @@ const Header = () => {
                   </button>
                 )}
               </div>
-              
+
               {item.subItems && (
-                <div 
-                  id={`mobile-sub-std-${item.label}`} 
+                <div
+                  id={`mobile-sub-std-${item.label}`}
                   className="max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50 rounded-xl"
                 >
                   <div className="px-5 py-3 flex flex-col gap-3">

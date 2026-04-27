@@ -99,7 +99,7 @@ export default function OurImpact() {
             <div className="flex items-center justify-center gap-4 mb-6">
               <div className="h-[2px] w-12 bg-[#9DCC46]"></div>
               <span className="text-[#9DCC46] font-bold tracking-[0.2em] uppercase text-sm drop-shadow-md">
-                Our Global Impact
+                Our Impact
               </span>
               <div className="h-[2px] w-12 bg-[#9DCC46]"></div>
             </div>

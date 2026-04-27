@@ -12,6 +12,7 @@ import OurImpact from "./components/Home/OurImpact";
 import BusinessVerticals from "./components/Home/BusinessVerticals";
 import PartnersSection from "./components/Home/PartnersSection";
 import ContactSection from "./components/Home/ContactSection";
+import OurPartners from "./components/Home/OurPartners";
 
 export default function Home() {
   return (
@@ -19,7 +20,8 @@ export default function Home() {
       <HomeHeader />
 
       <HeroSection />
-      <NewsSection />
+      <OurPartners/>
+      {/* <NewsSection /> */}
       <OurImpact />
 
       <PartnersSection />

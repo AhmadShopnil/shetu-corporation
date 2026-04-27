@@ -6,7 +6,7 @@ export const businessVerticalsData = [
     shortTitle: "Agrochemical Products",
     shortDescription: "Shetu Corporation's core business vertical is agrochemicals, where we specialize in crop protection solutions such as pesticides...",
     description: "Shetu Corporation's core business vertical is agrochemicals, where we specialize in crop protection solutions such as pesticides, micronutrients, and fertilizers. Our company has been operating in this sector since 1969 and plays a significant role in supporting agricultural productivity in Bangladesh through a diverse portfolio of crop care products.",
-    image: "https://images.unsplash.com/photo-1592982537447-6f23f11bc0e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
   {
     id: 2,
@@ -44,13 +44,13 @@ export const businessVerticalsData = [
     description: "Shetu also focuses on product development and registration, where we focus on introducing environmentally friendly and effective agricultural solutions. This includes research, compliance with regulatory standards, and adapting products to the local agricultural ecosystem.",
     image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
   },
-  {
-    id: 6,
-    slug: "veterinary-support",
-    title: "Veterinary & Agricultural Support Services: Where Animal Care Meets Farm Prosperity",
-    shortTitle: "Veterinary & Support Services",
-    shortDescription: "We are also involved in veterinary-related products and services, complementing our agricultural offerings...",
-    description: "We are also involved in veterinary-related products and services, complementing our agricultural offerings. This vertical supports livestock health and integrates with the broader agricultural value chain, enhancing productivity beyond crop farming.",
-    image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-  }
+  // {
+  //   id: 6,
+  //   slug: "veterinary-support",
+  //   title: "Veterinary & Agricultural Support Services: Where Animal Care Meets Farm Prosperity",
+  //   shortTitle: "Veterinary & Support Services",
+  //   shortDescription: "We are also involved in veterinary-related products and services, complementing our agricultural offerings...",
+  //   description: "We are also involved in veterinary-related products and services, complementing our agricultural offerings. This vertical supports livestock health and integrates with the broader agricultural value chain, enhancing productivity beyond crop farming.",
+  //   image: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+  // }
 ];

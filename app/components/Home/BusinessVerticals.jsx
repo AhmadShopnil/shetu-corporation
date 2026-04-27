@@ -75,9 +75,9 @@ export default function BusinessVerticals() {
               1024: {
                 slidesPerView: 3,
               },
-              1280: {
-                slidesPerView: 4,
-              }
+              // 1280: {
+              //   slidesPerView: 4,
+              // }
             }}
             pagination={{
               clickable: true,

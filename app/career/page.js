@@ -38,7 +38,7 @@ const jobOpenings = [
 
 const benefits = [
   {
-    title: "Innovative Environment",
+    title: "Join a purpose-driven organization ",
     description: "Work with cutting-edge agro-technologies and contribute to sustainable farming practices that change the world.",
     icon: (
       <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -47,7 +47,7 @@ const benefits = [
     )
   },
   {
-    title: "Health & Wellness",
+    title: "Help transform Bangladesh’s agriculture sector",
     description: "Comprehensive health coverage, mental wellness programs, and access to fresh, organic farm produce.",
     icon: (
       <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -56,7 +56,7 @@ const benefits = [
     )
   },
   {
-    title: "Growth Opportunities",
+    title: "Build sustainable food systems ",
     description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
     icon: (
       <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,6 +64,37 @@ const benefits = [
       </svg>
     )
   }
+  ,
+  {
+    title: "Comprehensive benefits and work life balance  ",
+    description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
+    icon: (
+      <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    )
+  }
+  ,
+  {
+    title: "Create real impact in communities ",
+    description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
+    icon: (
+      <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    )
+  }
+  ,
+  {
+    title: "Work with a passionate, committed team",
+    description: "Continuous learning budgets, regular workshops, and a clear path for career progression.",
+    icon: (
+      <svg className="w-8 h-8 text-[#9DCC46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    )
+  }
+
 ];
 
 export default function CareerPage() {
@@ -80,14 +111,14 @@ export default function CareerPage() {
         >
           Careers
         </motion.h1>
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="text-xl text-gray-500 mt-6 max-w-2xl mx-auto"
         >
           Join our mission to revolutionize sustainable agriculture. We're always looking for passionate people.
-        </motion.p>
+        </motion.p> */}
       </section>
 
       {/* Why Join Us Section */}
@@ -122,15 +153,15 @@ export default function CareerPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="p-8 border border-gray-100 rounded-3xl hover:shadow-xl transition-shadow bg-gray-50"
+                className="p-8 border border-gray-100 rounded-lg hover:shadow-xl transition-shadow bg-gray-50"
               >
                 <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center shadow-sm mb-6">
                   {benefit.icon}
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-                <p className="text-gray-600 leading-relaxed">
+                {/* <p className="text-gray-600 leading-relaxed">
                   {benefit.description}
-                </p>
+                </p> */}
               </motion.div>
             ))}
           </div>
@@ -148,7 +179,7 @@ export default function CareerPage() {
               viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             >
-              Current Openings
+              Openings
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -157,7 +188,8 @@ export default function CareerPage() {
               viewport={{ once: true }}
               className="text-lg text-gray-500 max-w-2xl mx-auto"
             >
-              Find your next role and help us grow a greener future.
+              Explore exciting career opportunities at Shetu Corporation Limited. Join a dynamic team dedicated to transforming agriculture 
+              in Bangladesh through innovation and sustainability. If you’re driven, passionate, and ready to make a meaningful impact, Shetu offers the perfect place to grow your career while contributing to a better future.
             </motion.p>
           </div>
 
@@ -198,9 +230,9 @@ export default function CareerPage() {
       </section>
 
       {/* Contact Us Section */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-8 md:py-20 px-6 bg-white">
         <div className="container mx-auto max-w-[1200px]">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -211,7 +243,7 @@ export default function CareerPage() {
             <p className="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
               We are always on the lookout for talented individuals. Even if your ideal role isn't listed above, we'd still love to hear from you. Drop us a line and tell us how you can make a difference.
             </p>
-          </motion.div>
+          </motion.div> */}
 
           <div className="flex flex-col lg:flex-row gap-12">
             {/* Address & Map */}

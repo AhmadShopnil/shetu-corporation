@@ -1,6 +1,11 @@
 "use client";
 
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+// Swiper styles
+import "swiper/css";
 
 const partnerLogos = [
   "/images/partner/1.webp",
@@ -13,58 +18,57 @@ const partnerLogos = [
 
 export default function PartnerSlider() {
   return (
-    <div className="relative mb-32 w-full">
-      {/* Gradient Edges for fade effect */}
-      <div className="absolute top-0 left-0 w-24 md:w-48 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
-      <div className="absolute top-0 right-0 w-24 md:w-48 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+    <div className="relative w-full py-10 bg-white overflow-hidden">
 
-      <div className="flex overflow-hidden group">
-        {/* Double the list for seamless loop */}
-        <div className="flex space-x-16 md:space-x-24 animate-marquee group-hover:[animation-play-state:paused] py-8">
-          {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 flex items-center justify-center w-40 h-20 transition-transform duration-300 hover:scale-105 cursor-pointer relative"
-            >
-              <Image
-                src={logo}
-                alt={`Partner ${index + 1}`}
-                fill
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
-        <div className="flex space-x-16 md:space-x-24 animate-marquee group-hover:[animation-play-state:paused] py-8 absolute top-0" aria-hidden="true" style={{ left: "100%" }}>
-          {[...partnerLogos, ...partnerLogos].map((logo, index) => (
-            <div
-              key={`copy-${index}`}
-              className="flex-shrink-0 flex items-center justify-center w-40 h-20 transition-transform duration-300 hover:scale-105 cursor-pointer relative"
-            >
-              <Image
-                src={logo}
-                alt={`Partner copy ${index + 1}`}
-                fill
-                className="object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+      {/* Gradient Fade (left & right) */}
+      <div className="absolute top-0 left-0 w-16 md:w-32 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-16 md:w-32 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-      <style jsx global>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-      `}</style>
+      <Swiper
+        modules={[Autoplay]}
+        loop={true}
+        speed={4000} // smooth continuous motion
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: true,
+        }}
+        slidesPerView={2}
+        spaceBetween={2}
+        breakpoints={{
+          480: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 5,
+            spaceBetween: 40,
+          },
+        }}
+        className="!overflow-visible"
+      >
+        {partnerLogos?.map((logo, index) => (
+          <SwiperSlide key={index}>
+            <div className="group flex items-center justify-center h-20 md:h-24">
+              
+              {/* Logo Wrapper */}
+              <div className="relative w-[120px] md:w-[160px] h-full transition-all duration-300 group-hover:scale-110">
+                <Image
+                  src={logo}
+                  alt={`Partner ${index + 1}`}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 }
