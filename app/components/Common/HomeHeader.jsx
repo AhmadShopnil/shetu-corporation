@@ -37,9 +37,12 @@ const HomeHeader = () => {
             height={80}
             priority
           />
-          <span className="text-xl uppercase font-bold text-white">
+          <span className={`text-xl uppercase font-bold ${textColor}`}>
+  Shetu Corporation
+</span>
+          {/* <span className="text-xl uppercase font-bold text-white">
             Shetu Corporation
-          </span>
+          </span> */}
         </Link>
         {/* <Link href="/" className="flex items-center gap-2">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
