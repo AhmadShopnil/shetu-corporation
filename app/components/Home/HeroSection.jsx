@@ -98,7 +98,7 @@ const HeroSection = () => {
           </motion.a>
         </motion.div>
 
-        <div className="flex gap-12 justify-end mt-auto">
+        <div className="flex gap-12 justify-end mt-auto pb-10">
           {features.map((f, i) => (
             <motion.div
               key={i}
