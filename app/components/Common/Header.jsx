@@ -45,14 +45,15 @@ const Header = () => {
             <div key={item.label} className="relative group">
               <Link
                 href={item.href}
-                className="flex items-center gap-1 text-lg font-medium text-gray-700 hover:text-[#9DCC46] transition-colors py-4"
+                className="flex items-center gap-1 text-lg lg:text-[19px] font-medium text-gray-700 hover:text-[#9DCC46] transition-colors py-4"
               >
                 {item.label}
                 {item.hasDropdown && <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" />}
               </Link>
 
               {item.subItems && (
-                <div className="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
+                <div className="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-3 opacity-0
+                 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
                   {item.subItems.map((sub) => (
                     <Link
                       key={sub.label}

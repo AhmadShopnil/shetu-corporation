@@ -62,7 +62,7 @@ const HomeHeader = () => {
             <div key={item.label} className="relative group">
               <Link
                 href={item.href}
-                className={`flex items-center gap-1 text-[15px] xl:text-base font-semibold ${textColor} hover:text-[#9DCC46] transition-colors py-4`}
+                className={`flex items-center gap-1 text-lg lg:text-[19px] font-semibold ${textColor} hover:text-[#9DCC46] transition-colors py-4`}
               >
                 {item.label}
                 {item.hasDropdown && <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" />}
