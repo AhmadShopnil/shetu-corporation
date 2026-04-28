@@ -9,10 +9,9 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { businessVerticalsData } from "../../data/businessVerticals";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
-export default function BusinessVerticals() {
+export default function BusinessVerticals({ verticalsData = [] }) {
   const [prevEl, setPrevEl] = useState(null);
   const [nextEl, setNextEl] = useState(null);
 
@@ -88,9 +87,6 @@ export default function BusinessVerticals() {
               1024: {
                 slidesPerView: 3,
               },
-              // 1280: {
-              //   slidesPerView: 4,
-              // }
             }}
             pagination={{
               clickable: true,
@@ -99,7 +95,7 @@ export default function BusinessVerticals() {
             autoplay={{ delay: 5000, disableOnInteraction: false }}
             className="pb-20 !pt-4"
           >
-            {businessVerticalsData.map((vertical, index) => (
+            {verticalsData.map((vertical, index) => (
               <SwiperSlide key={vertical.id}>
                 <Link href={`/business-verticals/${vertical.slug}`} className="block h-full">
                   <motion.div
@@ -108,10 +104,10 @@ export default function BusinessVerticals() {
                   >
                     {/* Background Image */}
                     <Image
-                      src={vertical.image}
-                      alt={vertical.title}
+                      src={vertical.featured_image}
+                      alt={vertical.name || vertical.sub_title}
                       fill
-                      className="object-cover transition-transform duration-1000 group-hover:scale-110 group-hover:opacity-80"
+                      className="object-fit transition-transform duration-1000 group-hover:scale-110 group-hover:opacity-80"
                     />
 
                     {/* Dark Gradient Overlay for readability */}
@@ -123,21 +119,22 @@ export default function BusinessVerticals() {
                       {/* Floating Badge */}
                       <div className="absolute top-6 left-6 translate-y-0 opacity-100 transition-all duration-500">
                         <div className="backdrop-blur-md bg-white/10 border border-white/20 text-white text-[10px] font-bold px-4 py-2 rounded-full uppercase tracking-widest group-hover:bg-[#9DCC46] group-hover:border-[#9DCC46] transition-colors duration-500">
-                          {vertical.shortTitle}
+                          {vertical.sub_title || vertical.name}
                         </div>
                       </div>
 
                       {/* Animated Title & Description Area */}
                       <div className="transform transition-transform duration-500 ease-out group-hover:-translate-y-4">
                         <h3 className="text-2xl font-bold text-white mb-2 leading-snug group-hover:text-[#9DCC46] transition-colors duration-500">
-                          {vertical.title.split(':')[0]}
+                          {(vertical.name || vertical.title).split(':')[0]}
                         </h3>
 
                         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out opacity-0 group-hover:opacity-100">
                           <div className="overflow-hidden">
-                            <p className="text-gray-300 text-sm leading-relaxed mt-3 mb-2 line-clamp-3">
-                              {vertical.shortDescription}
-                            </p>
+                            <div
+                              className="text-gray-300 text-sm leading-relaxed mt-3 mb-2 line-clamp-3 prose prose-invert prose-sm"
+                              dangerouslySetInnerHTML={{ __html: vertical.description || vertical.shortDescription }}
+                            />
                           </div>
                         </div>
                       </div>

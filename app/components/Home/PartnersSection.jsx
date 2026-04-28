@@ -7,14 +7,14 @@ import PartnerSlider from "./PartnerSlider";
 
 export default function PartnersSection() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
-    
+    <section className="py-20 lg:py-24 bg-white overflow-hidden">
 
-   
 
-      <div className="container mx-auto max-w-[1200px] px-6">
+
+
+      <div className="container mx-auto max-w-[1200px] px-3 md:px-6">
         {/* "Wish to partner with us?" Section */}
-        <div className="bg-[#f8f9fa] rounded-3xl p-8 md:p-16 relative overflow-hidden">
+        <div className="bg-[#f8f9fa] rounded-3xl p-4 md:p-8 lg:p-16 relative overflow-hidden">
           {/* Decorative Background Elements */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#9DCC46]/10 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#0a1f11]/5 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2"></div>
@@ -43,7 +43,7 @@ export default function PartnersSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9DCC46]/30 transition-all duration-300 group"
+                className="bg-white rounded-2xl  p-6 md:p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-[#9DCC46]/30 transition-all duration-300 group"
               >
                 <div className="w-14 h-14 bg-[#9DCC46]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#9DCC46] transition-colors duration-300">
                   <Mail className="w-7 h-7 text-[#9DCC46] group-hover:text-white transition-colors" />

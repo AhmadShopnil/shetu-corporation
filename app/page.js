@@ -13,8 +13,11 @@ import BusinessVerticals from "./components/Home/BusinessVerticals";
 import PartnersSection from "./components/Home/PartnersSection";
 import ContactSection from "./components/Home/ContactSection";
 import OurPartners from "./components/Home/OurPartners";
+import { getBusinessVerticals } from "@/lib/fetchApis";
 
-export default function Home() {
+export default async function Home() {
+  const verticalsData = await getBusinessVerticals();
+
   return (
     <div className="">
       <HomeHeader />
@@ -25,7 +28,7 @@ export default function Home() {
       <OurImpact />
 
       <PartnersSection />
-      <BusinessVerticals />
+      <BusinessVerticals verticalsData={verticalsData} />
       <ContactSection />
       {/* <AboutSection /> */}
       {/* <SustainableFarming /> */}

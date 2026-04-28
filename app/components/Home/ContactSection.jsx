@@ -32,10 +32,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="py-24 px-6 bg-[#f8f9fa] relative overflow-hidden" id="contact">
+    <section className="py-20 md:py-24 px-6 bg-[#f8f9fa] relative overflow-hidden" id="contact">
       {/* Decorative background elements */}
       {/* <div className="absolute top-0 right-0 w-1/3 h-full bg-[#0a1f11] rounded-l-[100px] opacity-5 md:block hidden"></div> */}
-      
+
       <div className="container mx-auto max-w-[1200px] relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
@@ -61,14 +61,14 @@ export default function ContactSection() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12 lg:gap-0 bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-          
+
           {/* Contact Information (Left Side) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:w-2/5 bg-[#0a1f11] p-10 md:p-12 text-white relative overflow-hidden"
+            className="lg:w-2/5 bg-[#0a1f11] p-6 md:p-12 text-white relative overflow-hidden"
           >
             {/* Background Accent */}
             <div className="absolute bottom-[-10%] right-[-10%] w-64 h-64 bg-[#9DCC46] rounded-full blur-[80px] opacity-20"></div>
@@ -106,7 +106,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-lg md:text-xl font-semibold mb-1">Office Location</h4>
                   <p className="text-sm md:text-base text-gray-300 leading-relaxed">
-                   
+
                     House 24, Road 14, Sector 6, Uttara Model Town, Dhaka 1230, Bangladesh
                   </p>
                 </div>
@@ -115,12 +115,12 @@ export default function ContactSection() {
           </motion.div>
 
           {/* Contact Form (Right Side) */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="lg:w-3/5 p-10 md:p-12 lg:p-16"
+            className="lg:w-3/5 p-6 md:p-12 lg:p-16"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

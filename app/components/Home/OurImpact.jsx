@@ -76,7 +76,7 @@ export default function OurImpact() {
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/service-main.jpg"
+          src="/images/impact.jpeg"
           alt="Impact Background"
           fill
           className="object-cover object-center"
@@ -87,7 +87,7 @@ export default function OurImpact() {
       </div>
 
       <div className="container mx-auto max-w-[1200px] relative z-10">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-4xl mx-auto mb-20">
           <motion.div
@@ -103,7 +103,7 @@ export default function OurImpact() {
               </span>
               <div className="h-[2px] w-12 bg-[#9DCC46]"></div>
             </div>
-            
+
             <h2 className="text-4xl md:text-5xl lg:text-[50px] font-semibold text-white mb-8 leading-tight drop-shadow-lg">
               Empowering Agriculture for Over Six Decades
             </h2>
@@ -126,15 +126,15 @@ export default function OurImpact() {
             >
               {/* Inner Glowing Accent */}
               <div className="absolute inset-0 rounded-[2rem] bg-[#9DCC46] opacity-0 group-hover:opacity-[0.03] blur-2xl transition-opacity duration-500 pointer-events-none"></div>
-              
+
               <div className="mb-6 text-[#9DCC46] group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(157,204,70,0.5)]">
-                 {stat.icon}
+                {stat.icon}
               </div>
-              
+
               <h3 className="text-3xl lg:text-4xl font-semibold text-white mb-3 tracking-tight">
                 {stat.title}
               </h3>
-              
+
               <p className="text-gray-400 font-medium text-sm lg:text-base leading-snug uppercase tracking-wider">
                 {stat.subtitle}
               </p>
