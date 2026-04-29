@@ -1,16 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import Header from "../components/Common/Header";
-import Footer from "../components/Common/Footer";
 import { motion } from "motion/react";
 import Teams from "../components/LeaderShip/Teams";
 
 export default function AboutClient({ teamData }) {
   return (
     <main className="min-h-screen bg-white">
-      <Header />
-
       {/* Hero / Page Title */}
       <section className="pt-40 pb-20 px-6 text-center bg-gray-50">
         <motion.h1
@@ -118,8 +114,6 @@ A pioneer in agrochemicals, Shetu established one of the country’s earliest fo
       </section>
 
       <Teams teamData={teamData} />
-
-      <Footer />
     </main>
   );
 }

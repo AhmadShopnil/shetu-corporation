@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Briefcase, Mail } from "lucide-react";
 import PartnerSlider from "./PartnerSlider";
 
-export default function OurPartners() {
+export default function OurPartners({ our_partners }) {
   return (
     <section className="py-8 md:py-14 lg:py-20 bg-white overflow-hidden">
       <div className="container mx-auto max-w-[1200px] px-6">
@@ -33,7 +33,7 @@ export default function OurPartners() {
       </div>
 
       {/* Continuous Logo Carousel (Infinite Marquee) - Full Width */}
-      <PartnerSlider />
+      <PartnerSlider our_partners={our_partners} />
 
     </section>
   );

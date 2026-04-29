@@ -1,36 +1,36 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { businessVerticalsData } from "../../data/businessVerticals";
-
 import Footer from "../../components/Common/Footer";
 import { ArrowLeft } from "lucide-react";
-import Header from "@/app/components/Common/Header";
+import MainHeader from "@/app/components/Common/MainHeader";
+import { getSingleBusinessVertical, getBusinessVerticals } from "@/lib/fetchApis";
 
-export function generateStaticParams() {
-  return businessVerticalsData.map((vertical) => ({
+export async function generateStaticParams() {
+  const verticals = await getBusinessVerticals();
+  return verticals.map((vertical) => ({
     slug: vertical.slug,
   }));
 }
 
 export default async function BusinessVerticalDetails({ params }) {
   const { slug } = await params;
-  const vertical = businessVerticalsData.find((v) => v.slug === "manufacturing-formulation");
+  const vertical = await getSingleBusinessVertical(slug);
 
-  if (!vertical) {
+  if (!vertical || Object.keys(vertical).length === 0) {
     notFound();
   }
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Header />
+      <MainHeader />
 
       <main className="flex-grow pt-24">
         {/* Hero Section */}
-        <section className="relative h-[400px] w-full">
+        <section className="relative h-[400px] md:h-[500px] w-full">
           <Image
-            src={vertical.image}
-            alt={vertical.title}
+            src={vertical.featured_image || "/images/service-main.jpg"}
+            alt={vertical.name}
             fill
             className="object-cover"
             priority
@@ -45,38 +45,45 @@ export default async function BusinessVerticalDetails({ params }) {
                 <ArrowLeft className="w-5 h-5" />
                 Back to Home
               </Link>
-              <h1 className="text-3xl md:text-5xl font-bold text-white max-w-4xl leading-tight">
-                {vertical.title}
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white max-w-4xl leading-[1.1] uppercase tracking-tighter">
+                {vertical.name}
               </h1>
+              {vertical.sub_title && (
+                 <p className="text-xl text-gray-300 mt-6 max-w-2xl font-medium leading-relaxed">
+                    {vertical.sub_title}
+                 </p>
+              )}
             </div>
           </div>
         </section>
 
         {/* Content Section */}
         <section className="py-20 px-6">
-          <div className="container mx-auto max-w-[1000px] bg-white rounded-2xl shadow-sm p-8 md:p-12 -mt-24 relative z-10">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-1 w-12 bg-[#9DCC46]"></div>
-              <h2 className="text-xl font-bold text-gray-800 uppercase tracking-wide">
-                Overview
+          <div className="container mx-auto max-w-[1000px] bg-white rounded-[2.5rem] shadow-xl p-8 md:p-16 -mt-32 relative z-10 border border-gray-100">
+            <div className="flex items-center gap-4 mb-10">
+              <div className="h-1.5 w-16 bg-[#9DCC46] rounded-full"></div>
+              <h2 className="text-sm font-black text-[#9DCC46] uppercase tracking-[0.3em]">
+                Explore Vertical
               </h2>
             </div>
 
-            <div className="prose prose-lg max-w-none text-gray-600">
-              <p className="text-lg leading-relaxed whitespace-pre-line">
-                {vertical.description}
-              </p>
-            </div>
+            <div 
+              className="prose prose-lg md:prose-xl max-w-none text-gray-600 
+              prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tight prose-headings:text-gray-900
+              prose-p:leading-relaxed prose-p:mb-8
+              prose-strong:text-gray-900 prose-strong:font-black"
+              dangerouslySetInnerHTML={{ __html: vertical.description }}
+            />
 
             {/* Optional Call to action */}
-            <div className="mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="mt-20 pt-10 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8">
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Interested in our services?</h3>
-                <p className="text-gray-500">Get in touch with our team to learn more about how we can help.</p>
+                <h3 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-tight">Interested in our services?</h3>
+                <p className="text-gray-500 font-medium">Get in touch with our team to learn more about how we can help.</p>
               </div>
               <Link
                 href="/contact"
-                className="px-8 py-3 bg-[#9DCC46] text-white font-semibold rounded-lg hover:bg-[#85b03b] transition-colors shadow-md hover:shadow-lg"
+                className="px-10 py-4 bg-[#9DCC46] text-gray-900 font-black uppercase tracking-widest text-xs rounded-full hover:bg-gray-900 hover:text-white transition-all duration-500 shadow-xl shadow-[#9DCC46]/20"
               >
                 Contact Us
               </Link>

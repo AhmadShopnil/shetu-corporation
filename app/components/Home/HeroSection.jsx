@@ -6,9 +6,9 @@ import heroImg from "@/assets/hero-farmer.jpg";
 import { Sprout, Leaf, TreePine } from "lucide-react";
 import Link from "next/link";
 const features = [
-  { icon: Sprout, label: "Healthy Soil\nSolutions" },
-  { icon: TreePine, label: "Pure Organic\nGrowth" },
-  { icon: Leaf, label: "Nature-Driven\nInnovation" },
+  { icon: Sprout, label: "Crop Protection", href: "/products/crop-protection" },
+  { icon: TreePine,label: "Insecticide", href: "/products/insecticide" },
+  { icon: Leaf,  label: "Fungicide", href: "/products/fungicide"},
 ];
 
 const HeroSection = () => {
@@ -100,7 +100,7 @@ const HeroSection = () => {
         </motion.div>
 
         <div className="flex gap-12 justify-end mt-auto lg:pb-10">
-          {features.map((f, i) => (
+          {/* {features.map((f, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 50 }}
@@ -119,9 +119,9 @@ const HeroSection = () => {
               >
                 <f.icon className="w-6 h-6lg:w-8 lg:h-8 text-primary-foreground" />
               </motion.div>
-              {/* <p className="text-primary-foreground font-body text-sm font-medium whitespace-pre-line">{f.label}</p> */}
+              <p className="text-white font-body text-sm font-medium whitespace-pre-line">{f.label}</p>
             </motion.div>
-          ))}
+          ))} */}
         </div>
       </div>
     </section>

@@ -16,7 +16,7 @@ const partnerLogos = [
   "/images/partner/7.webp",
 ];
 
-export default function PartnerSlider() {
+export default function PartnerSlider({ our_partners }) {
   return (
     <div className="relative w-full py-10 bg-white overflow-hidden">
 
@@ -51,14 +51,14 @@ export default function PartnerSlider() {
         }}
         className="!overflow-visible"
       >
-        {partnerLogos?.map((logo, index) => (
+        {our_partners?.map((partner, index) => (
           <SwiperSlide key={index}>
             <div className="group flex items-center justify-center h-20 md:h-24">
-              
+
               {/* Logo Wrapper */}
               <div className="relative w-[120px] md:w-[160px] h-full transition-all duration-300 group-hover:scale-110">
                 <Image
-                  src={logo}
+                  src={partner?.featured_image}
                   alt={`Partner ${index + 1}`}
                   fill
                   className="object-contain"

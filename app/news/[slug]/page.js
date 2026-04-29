@@ -1,13 +1,9 @@
 import Footer from "../../components/Common/Footer";
 import MainHeader from "../../components/Common/MainHeader";
-import BlogDetail from "./BlogDetail";
-import { getSingleProduct } from "@/lib/fetchApis"; // Reuse getSingleProduct if it handles posts
-import axios from "axios";
+import NewsDetail from "./NewsDetail";
 
-// Since it's a server component, we can use fetch or axios
 async function getPost(slug) {
   try {
-     // I'll use the BASE_URL from lib/baseUrl.js if possible, but I'll just use the full URL for now to be safe or check baseUrl.js
      const response = await fetch(`https://www.shetu.mathmozo.com/api/v1/post?slug=${slug}`, {
        next: { revalidate: 60 }
      });
@@ -18,7 +14,7 @@ async function getPost(slug) {
   }
 }
 
-export default async function SingleBlogPage({ params }) {
+export default async function SingleNewsPage({ params }) {
   const { slug } = await params;
   const post = await getPost(slug);
 
@@ -27,7 +23,7 @@ export default async function SingleBlogPage({ params }) {
       <main className="min-h-screen bg-white">
         <MainHeader />
         <div className="pt-48 pb-20 text-center container mx-auto">
-          <h1 className="text-4xl font-black text-gray-900 uppercase tracking-tighter">Article Not Found</h1>
+          <h1 className="text-4xl font-black text-gray-900 uppercase tracking-tighter">News Story Not Found</h1>
         </div>
         <Footer />
       </main>
@@ -37,7 +33,7 @@ export default async function SingleBlogPage({ params }) {
   return (
     <main className="min-h-screen bg-white">
       <MainHeader />
-      <BlogDetail post={post} />
+      <NewsDetail post={post} />
       <Footer />
     </main>
   );

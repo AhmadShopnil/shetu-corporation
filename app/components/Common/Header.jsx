@@ -6,26 +6,25 @@ import Link from "next/link";
 import { navItems } from "./NavData";
 import Image from "next/image";
 
-const Header = () => {
+const Header = ({ productCategories = [] }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
+
+  // Helper to get merged nav items
+  const getSubItems = (item) => {
+    if (item.label === "Products" && productCategories.length > 0) {
+      return productCategories.map(cat => ({
+        label: cat.name,
+        href: `/products/${cat.slug}`
+      }));
+    }
+    return item.subItems;
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm border-b border-gray-100 transition-all duration-300">
       <div className="mx-auto flex items-center justify-between py-4 px-4 md:px-10">
 
         {/* Logo */}
-        {/* <Link href="/" className="flex items-center gap-2">
-          <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-            <circle cx="16" cy="16" r="14" fill="hsl(82,77%,45%)" fillOpacity="0.2" />
-            <path d="M16 6C16 6 10 12 10 18C10 24 16 26 16 26C16 26 22 24 22 18C22 12 16 6 16 6Z" fill="hsl(82,77%,45%)" />
-            <path d="M16 10C14 14 12 16 10 18" stroke="hsl(100,50%,30%)" strokeWidth="1.5" fill="none" />
-            <path d="M16 10C18 14 20 16 22 18" stroke="hsl(100,50%,30%)" strokeWidth="1.5" fill="none" />
-          </svg>
-          <span className="text-2xl font-bold text-black">
-            Shetu Corporation
-          </span>
-        </Link> */}
-       {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/logo4.png" 
@@ -41,32 +40,35 @@ const Header = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
-          {navItems.map((item) => (
-            <div key={item.label} className="relative group">
-              <Link
-                href={item.href}
-                className="flex items-center gap-1 text-lg lg:text-[19px] font-medium text-gray-700 hover:text-[#9DCC46] transition-colors py-4"
-              >
-                {item.label}
-                {item.hasDropdown && <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" />}
-              </Link>
+          {navItems.map((item) => {
+            const currentSubItems = getSubItems(item);
+            return (
+              <div key={item.label} className="relative group">
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-1 text-lg lg:text-[19px] font-medium text-gray-700 hover:text-[#9DCC46] transition-colors py-4"
+                >
+                  {item.label}
+                  {item.hasDropdown && <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" />}
+                </Link>
 
-              {item.subItems && (
-                <div className="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-3 opacity-0
-                 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
-                  {item.subItems.map((sub) => (
-                    <Link
-                      key={sub.label}
-                      href={sub.href}
-                      className="block px-6 py-2.5 text-gray-700 hover:text-[#9DCC46] hover:bg-gray-50 transition-colors font-medium"
-                    >
-                      {sub.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
+                {currentSubItems && (
+                  <div className="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-3 opacity-0
+                   invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top scale-95 group-hover:scale-100">
+                    {currentSubItems.map((sub) => (
+                      <Link
+                        key={sub.label}
+                        href={sub.href}
+                        className="block px-6 py-2.5 text-gray-700 hover:text-[#9DCC46] hover:bg-gray-50 transition-colors font-medium"
+                      >
+                        {sub.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA */}
@@ -97,55 +99,58 @@ const Header = () => {
           }`}
       >
         <div className="px-6 py-6 overflow-y-auto max-h-[85vh] flex flex-col gap-2">
-          {navItems.map((item) => (
-            <div key={item.label} className="border-b border-gray-100 last:border-0">
-              <div className="flex items-center justify-between py-3">
-                <Link
-                  href={item.href}
-                  className="text-lg font-semibold text-gray-900 w-full"
-                  onClick={() => !item.subItems && setMobileOpen(false)}
-                >
-                  {item.label}
-                </Link>
-                {item.subItems && (
-                  <button
-                    onClick={() => {
-                      const el = document.getElementById(`mobile-sub-std-${item.label}`);
-                      el.classList.toggle('max-h-0');
-                      el.classList.toggle('max-h-[500px]');
-                      el.classList.toggle('opacity-0');
-                      el.classList.toggle('opacity-100');
-                      el.classList.toggle('mt-0');
-                      el.classList.toggle('mt-3');
-                    }}
-                    className="p-2 -mr-2 text-gray-500 hover:text-[#9DCC46] transition-colors"
+          {navItems.map((item) => {
+            const currentSubItems = getSubItems(item);
+            return (
+              <div key={item.label} className="border-b border-gray-100 last:border-0">
+                <div className="flex items-center justify-between py-3">
+                  <Link
+                    href={item.href}
+                    className="text-lg font-semibold text-gray-900 w-full"
+                    onClick={() => !currentSubItems && setMobileOpen(false)}
                   >
-                    <ChevronDown size={20} />
-                  </button>
+                    {item.label}
+                  </Link>
+                  {currentSubItems && (
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById(`mobile-sub-std-${item.label}`);
+                        el.classList.toggle('max-h-0');
+                        el.classList.toggle('max-h-[500px]');
+                        el.classList.toggle('opacity-0');
+                        el.classList.toggle('opacity-100');
+                        el.classList.toggle('mt-0');
+                        el.classList.toggle('mt-3');
+                      }}
+                      className="p-2 -mr-2 text-gray-500 hover:text-[#9DCC46] transition-colors"
+                    >
+                      <ChevronDown size={20} />
+                    </button>
+                  )}
+                </div>
+
+                {currentSubItems && (
+                  <div
+                    id={`mobile-sub-std-${item.label}`}
+                    className="max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50 rounded-xl"
+                  >
+                    <div className="px-5 py-3 flex flex-col gap-3">
+                      {currentSubItems.map((sub) => (
+                        <Link
+                          key={sub.label}
+                          href={sub.href}
+                          className="text-base text-gray-600 font-semibold hover:text-[#9DCC46] transition-colors"
+                          onClick={() => setMobileOpen(false)}
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
                 )}
               </div>
-
-              {item.subItems && (
-                <div
-                  id={`mobile-sub-std-${item.label}`}
-                  className="max-h-0 opacity-0 overflow-hidden transition-all duration-300 ease-in-out bg-gray-50 rounded-xl"
-                >
-                  <div className="px-5 py-3 flex flex-col gap-3">
-                    {item.subItems.map((sub) => (
-                      <Link
-                        key={sub.label}
-                        href={sub.href}
-                        className="text-base text-gray-600 font-semibold hover:text-[#9DCC46] transition-colors"
-                        onClick={() => setMobileOpen(false)}
-                      >
-                        {sub.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </div>
-          ))}
+            );
+          })}
 
           <Link
             href="/contact"

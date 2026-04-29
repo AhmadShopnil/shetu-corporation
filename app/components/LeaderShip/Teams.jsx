@@ -11,7 +11,7 @@ export default function Teams({ teamData = [] }) {
 
 
       {/* Hero / Page Title */}
-      <section className="pt-40 pb-20 px-6 text-center">
+      <section className="pt-20 pb-10 px-6 text-center ">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export default function Teams({ teamData = [] }) {
       </section>
 
       {/* Team Sections */}
-      <section className="pb-32 px-6">
+      <section className=" px-6 ">
         <div className="container mx-auto max-w-[1200px]">
           {teamData.map((member, index) => (
             <motion.div

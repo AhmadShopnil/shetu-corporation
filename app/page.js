@@ -1,5 +1,5 @@
 import Image from "next/image";
-import HomeHeader from "./components/Common/HomeHeader";
+import MainHeader from "./components/Common/MainHeader";
 import HeroSection from "./components/Home/HeroSection";
 import Footer from "./components/Common/Footer";
 import ServicesSection from "./components/Home/ServicesSection";
@@ -13,17 +13,18 @@ import BusinessVerticals from "./components/Home/BusinessVerticals";
 import PartnersSection from "./components/Home/PartnersSection";
 import ContactSection from "./components/Home/ContactSection";
 import OurPartners from "./components/Home/OurPartners";
-import { getBusinessVerticals } from "@/lib/fetchApis";
+import { getBusinessVerticals, getPartners } from "@/lib/fetchApis";
 
 export default async function Home() {
   const verticalsData = await getBusinessVerticals();
+  const our_partners = await getPartners()
 
   return (
     <div className="">
-      <HomeHeader />
+      <MainHeader isHome={true} />
 
       <HeroSection />
-      <OurPartners/>
+      <OurPartners our_partners={our_partners} />
       {/* <NewsSection /> */}
       <OurImpact />
 
