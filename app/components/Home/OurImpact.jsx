@@ -81,9 +81,10 @@ export default function OurImpact() {
           fill
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[#0a1f11]/90 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-[#0a1f11]/30 mix-blend-multiply"></div>
         {/* Soft radial gradient for a spotlight effect */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#051008_100%)] opacity-80"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#051008_100%)]
+         opacity-40"></div>
       </div>
 
       <div className="container mx-auto max-w-[1200px] relative z-10">

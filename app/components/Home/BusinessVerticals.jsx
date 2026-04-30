@@ -16,11 +16,12 @@ export default function BusinessVerticals({ verticalsData = [] }) {
   const [nextEl, setNextEl] = useState(null);
 
   return (
-    <section className="py-32 px-6 bg-[#0a1f11] relative overflow-hidden">
+    <section className="py-32 px-6 bg-[#1C3513] relative overflow-hidden">
       {/* Background aesthetic elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#9DCC46]/5 blur-[120px]"></div>
-        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#9DCC46]/5 blur-[120px]"></div>
+        <div className="absolute bottom-[-20%] right-[-10%] w-[50%] h-[50%] rounded-full bg-[#9DCC46]/5 
+        blur-[120px]"></div>
       </div>
 
       <div className="container mx-auto max-w-[1400px] relative z-10">
