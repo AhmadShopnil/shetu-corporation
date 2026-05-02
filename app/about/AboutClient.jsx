@@ -113,7 +113,7 @@ export default function AboutClient({ teamData }) {
         </div>
       </section>
 
-      <Teams teamData={teamData} />
+      {/* <Teams teamData={teamData} /> */}
     </main>
   );
 }

@@ -37,17 +37,21 @@ const Footer = () => {
 
           {/* Logo + Contact */}
           <div>
-            <Link href="/" className="flex items-center gap-2 -mt-1 mb-4">
-              <Image
-                src="/images/logomain.png"
-                alt="Shetu Corporation Logo"
-                width={220}
-                height={60}
-                priority
-              />
-            </Link>
+             {/* Logo */}
+        <Link href="/" className="flex items-center gap-1">
+          <Image
+            src="/images/logo-main.png"
+            alt="Shetu Corporation Logo"
+            width={65}
+            height={65}
+            priority
+          />
+          <span className="text-base uppercase font-bold  text-white">
+            Shetu Corporation Ltd
+          </span>
+        </Link>
 
-            <div className="space-y-4">
+            <div className="space-y-4 mt-3">
               <p className="flex items-center gap-3 text-[15px] md:text-base text-white">
                 <span className="w-10 h-10 rounded-full  flex items-center 
                 justify-center">

@@ -5,19 +5,19 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 
 const locations = [
-  { id: 1, name: "Thakurgaon", x: 25, y: 12, address: "Setu Corporation Ltd, Thakurgaon Office, Sadar, Thakurgaon" },
-  { id: 2, name: "Rangpur", x: 45, y: 25, address: "Setu Corporation Ltd, Rangpur Regional Office, Rangpur" },
-  { id: 3, name: "Bogura", x: 32, y: 35, address: "Setu Corporation Ltd, Bogura Point, Bogura" },
-  { id: 4, name: "Mymensingh", x: 68, y: 28, address: "Setu Corporation Ltd, Mymensingh Depot" },
-  { id: 5, name: "Sylhet", x: 60, y: 30, address: "Setu Corporation Ltd, Sylhet Regional Center" },
-  { id: 6, name: "Dhaka", x: 60, y: 48, address: "Head Office: House 24, Road 14, Sector 6, Uttara Model Town, Dhaka 1230" },
-  { id: 7, name: "Rajshahi", x: 38, y: 55, address: "Setu Corporation Ltd, Rajshahi Division Office" },
-  { id: 8, name: "Kushtia", x: 35, y: 65, address: "Setu Corporation Ltd, Kushtia Service Center" },
-  { id: 9, name: "Jashore", x: 38, y: 78, address: "Setu Corporation Ltd, Jashore Logistics Hub" },
-  { id: 10, name: "Cumilla", x: 72, y: 64, address: "Setu Corporation Ltd, Cumilla Distribution Point" },
-  { id: 11, name: "Noakhali", x: 78, y: 72, address: "Setu Corporation Ltd, Noakhali Office" },
-  { id: 12, name: "Barishal", x: 80, y: 85, address: "Setu Corporation Ltd, Barishal Branch" },
-  { id: 13, name: "Chattogram", x: 52, y: 72, address: "Setu Corporation Ltd, Chattogram Port Office" },
+  { id: 1, name: "Rangpur Regional Office", x: 27, y: 12, address: "House-19,Road-01, Ward-18, Terminal Road, Porjonton Purbo Para, Rangpur" },
+  { id: 2, name: "Bogura Regional Office", x: 34, y: 31, address: "Mirza Plaza, House no-366, Gohail Road, Fultola, Shajanpur, Bagura" },
+  { id: 3, name: "Mymensingh Regional Office", x: 51, y: 33, address: "House- 260, Road-01, Dholadia, Taltola, Mymensingh-2200" },
+  { id: 4, name: "Rajshahi Regional Office Address", x: 26, y: 36, address: "House-72, Ward No-26, Nader Hazir Mor, Uttar Chokpara, Boalia, Rajshah " },
+  { id: 5, name: "Sreemangal Regional Office Address", x: 71, y: 32, address: "211, College Road, Ground Floor, Sreemangal" },
+  { id: 6, name: "Jhenaidah Regional Office Address", x: 30, y: 51, address: "C/O Kazi Kamal Ahmed (Babu), Upazila Road, Jhenaidah" },
+  { id: 7, name: "Dhaka Headquarters Office Address", x: 48, y: 42, address: "75 Madani Avenue, Alokananda 8th Floor, Block-A, Ward No-40, Vatara, Dhaka-1212" },
+  { id: 8, name: "Jashore Regional Office Address", x: 32, y: 58, address:"Dhaka Road, Sheikh Hati, Bablatola. Jashore-7300 " },
+  { id: 9, name: "Faridpur Regional Office Address", x: 53, y: 55, address: "Shawon Plaza, Alipur Lane no- 1, Kotowali, Faridpur" },
+  { id: 10, name: "Cumilla Regional Office address", x: 60, y: 51, address: "House-4, Block-A, Housing Estate, Cumilla" },
+  { id: 11, name: "Feni Regional Office Address", x: 67, y: 63, address: "House-4, Block-A, Housing Estate, Cumilla" },
+  { id: 12, name: "Barishal Regional Office Address", x: 52, y: 70, address: "Holding no 5326, Rashidbag, C.N.B. Road, Barishal" },
+  { id: 13, name: "Chattagram Regional Office Address", x: 80, y: 69, address: "Sundar Mohal Market (Ground Floor), Bara Dighir Par, Fatehabad, Hathhazari " },
 ];
 
 const MapSection = () => {

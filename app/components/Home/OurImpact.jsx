@@ -115,7 +115,7 @@ export default function OurImpact() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-8">
           {impactData.map((stat, index) => (
             <motion.div
               key={stat.id}
@@ -123,22 +123,42 @@ export default function OurImpact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="relative group p-6 lg:p-8 rounded-[2rem] bg-white/5 backdrop-blur-md border border-white/10 hover:bg-white/10 hover:border-[#9DCC46]/50 transition-all duration-500 flex flex-col items-center text-center hover:-translate-y-2 shadow-2xl"
+              className="group h-[200px] md:h-[200px] lg:h-[220px] w-full [perspective:1000px]
+              cursor-pointer
+              "
             >
-              {/* Inner Glowing Accent */}
-              <div className="absolute inset-0 rounded-[2rem] bg-[#9DCC46] opacity-0 group-hover:opacity-[0.03] blur-2xl transition-opacity duration-500 pointer-events-none"></div>
+              <div className="relative h-full w-full rounded-[2rem] transition-all duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)] shadow-2xl">
 
-              <div className="mb-6 text-[#9DCC46] group-hover:scale-110 transition-transform duration-500 drop-shadow-[0_0_15px_rgba(157,204,70,0.5)]">
-                {stat.icon}
+                {/* Front Side */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 lg:p-8 rounded-[2rem] bg-white/5 backdrop-blur-md border border-white/10 [backface-visibility:hidden]">
+                  <div className="mb-4 lg:mb-6 text-[#9DCC46] drop-shadow-[0_0_15px_rgba(157,204,70,0.5)]">
+                    {stat.icon}
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-semibold text-white mb-2 lg:mb-3 tracking-tight">
+                    {stat.title}
+                  </h3>
+                  <p className="text-gray-400 font-medium text-sm lg:text-base leading-snug uppercase tracking-wider">
+                    {stat.subtitle}
+                  </p>
+                </div>
+
+                {/* Back Side */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 lg:p-8 rounded-[2rem] bg-white border border-[#9DCC46]/50 [backface-visibility:hidden] [transform:rotateY(180deg)] overflow-hidden">
+                  {/* Subtle inner accent for back side */}
+                  <div className="absolute inset-0 rounded-[2rem] bg-[#9DCC46] opacity-[0.05] blur-2xl pointer-events-none"></div>
+
+                  <div className="relative z-10 mb-4 lg:mb-6 text-[#9DCC46] scale-110 drop-shadow-[0_0_15px_rgba(157,204,70,0.5)]">
+                    {stat.icon}
+                  </div>
+                  <h3 className="relative z-10 text-3xl lg:text-4xl font-semibold text-gray-900 mb-2 lg:mb-3 tracking-tight">
+                    {stat.title}
+                  </h3>
+                  <p className="relative z-10 text-gray-600 font-medium text-sm lg:text-base leading-snug uppercase tracking-wider">
+                    {stat.subtitle}
+                  </p>
+                </div>
+
               </div>
-
-              <h3 className="text-3xl lg:text-4xl font-semibold text-white mb-3 tracking-tight">
-                {stat.title}
-              </h3>
-
-              <p className="text-gray-400 font-medium text-sm lg:text-base leading-snug uppercase tracking-wider">
-                {stat.subtitle}
-              </p>
             </motion.div>
           ))}
         </div>

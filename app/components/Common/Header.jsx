@@ -27,14 +27,14 @@ const Header = ({ productCategories = [] }) => {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/logo4.png"
+            src="/images/logo-main.png"
             alt="Shetu Corporation Logo"
             width={80}
             height={80}
             priority
           />
           <span className="text-xl uppercase font-bold text-black">
-            Shetu Corporation
+            Shetu Corporation Ltd
           </span>
         </Link>
 

@@ -28,10 +28,9 @@ export default async function Home() {
       <OurPartners our_partners={our_partners} />
       {/* <NewsSection /> */}
       <OurImpact />
-
-      <PartnersSection />
-      <BusinessVerticals verticalsData={verticalsData} />
       <MapSection />
+      <BusinessVerticals verticalsData={verticalsData} />
+      <PartnersSection />
       <ContactSection />
       {/* <AboutSection /> */}
       {/* <SustainableFarming /> */}

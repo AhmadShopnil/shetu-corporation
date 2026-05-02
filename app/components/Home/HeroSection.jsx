@@ -16,7 +16,7 @@ const HeroSection = () => {
     <section className="relative h-screen flex items-center overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="images/headerbg.jpeg"
+          src="images/headerbg2.jpeg"
           alt="Farmer in agricultural field"
           className="w-full h-full object-cover"
           width={1920}
