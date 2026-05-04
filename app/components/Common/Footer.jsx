@@ -40,7 +40,7 @@ const Footer = () => {
              {/* Logo */}
         <Link href="/" className="flex items-center gap-1">
           <Image
-            src="/images/logo-main.png"
+            src="/images/logo-final.png"
             alt="Shetu Corporation Logo"
             width={65}
             height={65}

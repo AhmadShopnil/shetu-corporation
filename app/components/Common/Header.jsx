@@ -27,7 +27,7 @@ const Header = ({ productCategories = [] }) => {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/logo-main.png"
+            src="/images/logo-final.png"
             alt="Shetu Corporation Logo"
             width={80}
             height={80}
