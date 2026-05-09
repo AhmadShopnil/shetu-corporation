@@ -38,7 +38,7 @@ const impactData = [
   },
   {
     id: 5,
-    title: "60k+",
+    title: "60K+",
     subtitle: "Retailers",
     icon: (
       <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -90,7 +90,7 @@ export default function OurImpact() {
       <div className="container mx-auto max-w-[1200px] relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-10">
+        <div className="text-center max-w-4xl mx-auto mb-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +108,7 @@ export default function OurImpact() {
             <h2 className="text-4xl md:text-5xl lg:text-[50px] font-semibold text-white mb-4 leading-tight drop-shadow-lg">
               Empowering Agriculture for Over Six Decades
             </h2>
-            <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base md:text-lg text-white leading-relaxed max-w-3xl mx-auto">
               Spanning over six decades, Shetu Corporation has strengthened Bangladesh&apos;s food chain by empowering farmers, improving crops and livestock, and building a more resilient agricultural ecosystem.
             </p>
           </motion.div>
@@ -123,7 +123,7 @@ export default function OurImpact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group h-[200px] md:h-[200px] lg:h-[220px] w-full [perspective:1000px]
+              className="group h-[200px] md:h-[200px] lg:h-[210px] w-full [perspective:1000px]
               cursor-pointer
               "
             >
@@ -134,7 +134,7 @@ export default function OurImpact() {
                   <div className="mb-4 lg:mb-6 text-[#9DCC46] drop-shadow-[0_0_15px_rgba(157,204,70,0.5)]">
                     {stat.icon}
                   </div>
-                  <h3 className="text-3xl lg:text-4xl font-semibold text-white mb-2 lg:mb-3 tracking-tight">
+                  <h3 className="text-2xl lg:text-3xl font-semibold text-white mb-2 lg:mb-3 tracking-tight">
                     {stat.title}
                   </h3>
                   <p className="text-gray-400 font-medium text-sm lg:text-base leading-snug uppercase tracking-wider">

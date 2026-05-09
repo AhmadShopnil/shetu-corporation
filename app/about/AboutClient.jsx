@@ -19,7 +19,7 @@ export default function AboutClient({ teamData }) {
       </section>
 
       {/* Overview Section */}
-      <section className="py-24 px-6">
+      <section className="py-16 px-6">
         <div className="container mx-auto max-w-[1200px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -29,7 +29,7 @@ export default function AboutClient({ teamData }) {
             className="flex flex-col lg:flex-row items-center gap-16"
           >
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Overview</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Overview</h2>
               <p className="text-gray-600 text-lg leading-relaxed mb-6">
                 Since 1969, Shetu Corporation has stood at the forefront of Bangladesh’s agricultural evolution—fueling growth, supporting farmers, and feeding the nation. Guided by the vision “From Farmers’ Fields to the Nation’s Table,” we provide innovative solutions across crops, livestock, and farm services, building a resilient and sustainable food chain for generations ahead.
               </p>
@@ -49,7 +49,7 @@ export default function AboutClient({ teamData }) {
       </section>
 
       {/* Vision and Mission Section */}
-      <section className="py-24 px-6 bg-[#f4f8ec]">
+      <section className="py-16 px-6 bg-[#f4f8ec]">
         <div className="container mx-auto max-w-[1200px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <motion.div
@@ -93,7 +93,7 @@ export default function AboutClient({ teamData }) {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-24 px-6">
+      <section className="py-16 px-6">
         <div className="container mx-auto max-w-[1200px] text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -43,7 +43,7 @@ export default function BusinessVerticals({ verticalsData = [] }) {
             <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
               Empowering Agriculture Through Innovation
             </h2>
-            <p className="text-lg text-gray-400 leading-relaxed font-light">
+            <p className="text-lg text-white leading-relaxed font-light">
               Built over six decades, our diverse business verticals reflect a unified commitment to quality and the sustainable growth of Bangladesh&apos;s agricultural ecosystem.
             </p>
           </motion.div>

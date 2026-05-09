@@ -45,13 +45,13 @@ export default async function BusinessVerticalDetails({ params }) {
                 <ArrowLeft className="w-5 h-5" />
                 Back to Home
               </Link>
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white max-w-4xl leading-[1.1] uppercase tracking-tighter">
+              <h1 className="text-3xl md:text-3xl lg:text-4xl font-black text-white max-w-4xl leading-[1.1] uppercase tracking-tighter">
                 {vertical.name}
               </h1>
               {vertical.sub_title && (
-                 <p className="text-xl text-gray-300 mt-6 max-w-2xl font-medium leading-relaxed">
-                    {vertical.sub_title}
-                 </p>
+                <p className="text-xl text-gray-300 mt-6 max-w-2xl font-medium leading-relaxed">
+                  {vertical.sub_title}
+                </p>
               )}
             </div>
           </div>
@@ -67,7 +67,7 @@ export default async function BusinessVerticalDetails({ params }) {
               </h2>
             </div>
 
-            <div 
+            <div
               className="prose prose-lg md:prose-xl max-w-none text-gray-600 
               prose-headings:font-black prose-headings:uppercase prose-headings:tracking-tight prose-headings:text-gray-900
               prose-p:leading-relaxed prose-p:mb-8
@@ -78,7 +78,7 @@ export default async function BusinessVerticalDetails({ params }) {
             {/* Optional Call to action */}
             <div className="mt-20 pt-10 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-8">
               <div>
-                <h3 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-tight">Interested in our services?</h3>
+                <h3 className="text-2xl font-black text-gray-900 mb-2 uppercase tracking-tight">Should be Interested in our Products? </h3>
                 <p className="text-gray-500 font-medium">Get in touch with our team to learn more about how we can help.</p>
               </div>
               <Link
