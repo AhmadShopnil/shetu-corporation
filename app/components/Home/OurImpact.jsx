@@ -72,7 +72,7 @@ const impactData = [
 
 export default function OurImpact() {
   return (
-    <section className="relative py-32 px-6 overflow-hidden">
+    <section className="relative py-16 lg:py-24 px-6 overflow-hidden">
       {/* Dynamic Background */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -90,7 +90,7 @@ export default function OurImpact() {
       <div className="container mx-auto max-w-[1200px] relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-20">
+        <div className="text-center max-w-4xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -105,7 +105,7 @@ export default function OurImpact() {
               <div className="h-[2px] w-12 bg-[#9DCC46]"></div>
             </div>
 
-            <h2 className="text-4xl md:text-5xl lg:text-[50px] font-semibold text-white mb-8 leading-tight drop-shadow-lg">
+            <h2 className="text-4xl md:text-5xl lg:text-[50px] font-semibold text-white mb-4 leading-tight drop-shadow-lg">
               Empowering Agriculture for Over Six Decades
             </h2>
             <p className="text-base md:text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
@@ -115,7 +115,7 @@ export default function OurImpact() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 lg:gap-6">
           {impactData.map((stat, index) => (
             <motion.div
               key={stat.id}

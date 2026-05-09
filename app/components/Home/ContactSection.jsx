@@ -37,14 +37,14 @@ export default function ContactSection() {
       {/* <div className="absolute top-0 right-0 w-1/3 h-full bg-[#0a1f11] rounded-l-[100px] opacity-5 md:block hidden"></div> */}
 
       <div className="container mx-auto max-w-[1200px] relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="flex items-center justify-center gap-4 mb-4">
               <div className="h-[2px] w-12 bg-[#9DCC46]"></div>
               <span className="text-[#9DCC46] font-bold tracking-[0.2em] uppercase text-sm">
                 Get In Touch
@@ -106,8 +106,8 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-lg md:text-xl font-semibold mb-1">Office Location</h4>
                   <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                    House # 52, Word # 01, Block # A, Madani Avenue, Dhaka
 
-                    House 24, Road 14, Sector 6, Uttara Model Town, Dhaka 1230, Bangladesh
                   </p>
                 </div>
               </div>

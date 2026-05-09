@@ -12,7 +12,7 @@ const locations = [
   { id: 5, name: "Sreemangal Regional Office Address", x: 71, y: 32, address: "211, College Road, Ground Floor, Sreemangal" },
   { id: 6, name: "Jhenaidah Regional Office Address", x: 30, y: 51, address: "C/O Kazi Kamal Ahmed (Babu), Upazila Road, Jhenaidah" },
   { id: 7, name: "Dhaka Headquarters Office Address", x: 48, y: 42, address: "75 Madani Avenue, Alokananda 8th Floor, Block-A, Ward No-40, Vatara, Dhaka-1212" },
-  { id: 8, name: "Jashore Regional Office Address", x: 32, y: 58, address:"Dhaka Road, Sheikh Hati, Bablatola. Jashore-7300 " },
+  { id: 8, name: "Jashore Regional Office Address", x: 32, y: 58, address: "Dhaka Road, Sheikh Hati, Bablatola. Jashore-7300 " },
   { id: 9, name: "Faridpur Regional Office Address", x: 53, y: 55, address: "Shawon Plaza, Alipur Lane no- 1, Kotowali, Faridpur" },
   { id: 10, name: "Cumilla Regional Office address", x: 60, y: 51, address: "House-4, Block-A, Housing Estate, Cumilla" },
   { id: 11, name: "Feni Regional Office Address", x: 67, y: 63, address: "House-4, Block-A, Housing Estate, Cumilla" },
@@ -28,7 +28,7 @@ const MapSection = () => {
       <div className="container mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-10 ">
           {/* Left Content */}
-          <div className="lg:w-[40%] text-left">
+          <div className="lg:w-[45%] text-left">
             <motion.h2
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -50,7 +50,7 @@ const MapSection = () => {
           </div>
 
           {/* Right Map */}
-          <div className="lg:w-[60%] relative w-full ">
+          <div className="lg:w-[55%] relative w-full ">
             <div className="relative w-full aspect-[1/1.1] ">
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}

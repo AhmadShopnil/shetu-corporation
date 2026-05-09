@@ -16,7 +16,7 @@ export default function BusinessVerticals({ verticalsData = [] }) {
   const [nextEl, setNextEl] = useState(null);
 
   return (
-    <section className="py-32 px-6 bg-[#1C3513] relative overflow-hidden">
+    <section className="py-16 lg:py-24 px-6 bg-[#1C3513] relative overflow-hidden">
       {/* Background aesthetic elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[50%] h-[50%] rounded-full bg-[#9DCC46]/5 blur-[120px]"></div>
@@ -26,21 +26,21 @@ export default function BusinessVerticals({ verticalsData = [] }) {
 
       <div className="container mx-auto max-w-[1400px] relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-8">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="max-w-2xl"
+            className="max-w-2xl "
           >
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-2">
               <div className="h-[2px] w-12 bg-[#9DCC46]"></div>
               <span className="text-[#9DCC46] font-bold tracking-[0.2em] uppercase text-sm">
                 Business Verticals
               </span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
               Empowering Agriculture Through Innovation
             </h2>
             <p className="text-lg text-gray-400 leading-relaxed font-light">
@@ -54,7 +54,7 @@ export default function BusinessVerticals({ verticalsData = [] }) {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="flex gap-3">
+            <div className="flex gap-3  ">
               <button ref={(node) => setPrevEl(node)} className="vertical-prev w-12 h-12 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-[#9DCC46] hover:border-[#9DCC46] hover:text-gray-900 transition-all duration-300 backdrop-blur-sm group cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed">
                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               </button>
@@ -71,7 +71,7 @@ export default function BusinessVerticals({ verticalsData = [] }) {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
-          className="relative"
+          className="relative "
         >
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
