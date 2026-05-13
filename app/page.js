@@ -14,11 +14,12 @@ import PartnersSection from "./components/Home/PartnersSection";
 import ContactSection from "./components/Home/ContactSection";
 import MapSection from "./components/Home/MapSection";
 import OurPartners from "./components/Home/OurPartners";
-import { getBusinessVerticals, getPartners } from "@/lib/fetchApis";
+import { getBusinessVerticals, getPartners, getSettings } from "@/lib/fetchApis";
 
 export default async function Home() {
   const verticalsData = await getBusinessVerticals();
   const our_partners = await getPartners()
+  const settings = await getSettings();
 
   return (
     <div className="">
@@ -31,7 +32,7 @@ export default async function Home() {
       <MapSection />
       <BusinessVerticals verticalsData={verticalsData} />
       <PartnersSection />
-      <ContactSection />
+      <ContactSection settings={settings} />
       {/* <AboutSection /> */}
       {/* <SustainableFarming /> */}
       {/* <WhyChooseSection /> */}

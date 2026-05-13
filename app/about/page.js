@@ -1,4 +1,4 @@
-import { getLeaderShips } from "@/lib/fetchApis";
+import { getLeaderShips, getSinglePageBySlug } from "@/lib/fetchApis";
 import AboutClient from "./AboutClient";
 import MainHeader from "../components/Common/MainHeader";
 import Footer from "../components/Common/Footer";
@@ -10,11 +10,12 @@ export const metadata = {
 
 export default async function AboutPage() {
   const teamData = await getLeaderShips();
+  const aboutData = await getSinglePageBySlug("about-us");
 
   return (
     <>
       <MainHeader />
-      <AboutClient teamData={teamData} />
+      <AboutClient teamData={teamData} aboutData={aboutData} />
       <Footer />
     </>
   );

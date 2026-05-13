@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import Link from "next/link";
 import { Sprout, Heart, TrendingUp, Clock, Users, Globe } from "lucide-react";
+import { getImageUrl } from "@/utils/getImageUrl";
 
 const jobOpenings = [
   {
@@ -35,34 +36,23 @@ const jobOpenings = [
   }
 ];
 
-const benefits = [
-  {
-    title: "Join a purpose-driven organization",
-    icon: <Sprout className="w-8 h-8 text-[#9DCC46]" />
-  },
-  {
-    title: "Help transform Bangladesh’s agriculture sector",
-    icon: <Heart className="w-8 h-8 text-[#9DCC46]" />
-  },
-  {
-    title: "Build sustainable food systems",
-    icon: <TrendingUp className="w-8 h-8 text-[#9DCC46]" />
-  },
-  {
-    title: "Comprehensive benefits and work life balance",
-    icon: <Clock className="w-8 h-8 text-[#9DCC46]" />
-  },
-  {
-    title: "Create real impact in communities",
-    icon: <Globe className="w-8 h-8 text-[#9DCC46]" />
-  },
-  {
-    title: "Work with a passionate, committed team",
-    icon: <Users className="w-8 h-8 text-[#9DCC46]" />
-  }
-];
+const benefitsIcons = {
+  "Join a purpose-driven organization": <Sprout className="w-8 h-8 text-[#9DCC46]" />,
+  "Help transform Bangladesh’s agriculture sector": <Heart className="w-8 h-8 text-[#9DCC46]" />,
+  "Build sustainable food systems": <TrendingUp className="w-8 h-8 text-[#9DCC46]" />,
+  "Comprehensive benefits and work life balance": <Clock className="w-8 h-8 text-[#9DCC46]" />,
+  "Create real impact in communities": <Globe className="w-8 h-8 text-[#9DCC46]" />,
+  "Work with a passionate, committed team": <Users className="w-8 h-8 text-[#9DCC46]" />,
+};
 
-export default function CareerContent() {
+export default function CareerContent({ careerData }) {
+  const sections = careerData?.sections_on_api || [];
+  
+  const whyJoinUs = sections.find(s => s.title_slug === "why-join-us");
+  const openingsSection = sections.find(s => s.title_slug === "openings");
+
+  const dynamicBenefits = whyJoinUs?.sub_sections || [];
+
   return (
     <>
       <section className="pt-40 pb-20 px-6 text-center bg-gray-50">
@@ -71,112 +61,115 @@ export default function CareerContent() {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-bold text-gray-900 tracking-tight"
         >
-          Career
+          {careerData?.name || "Career"}
         </motion.h1>
       </section>
 
-      <section className="py-24 px-6 bg-white">
-        <div className="container mx-auto max-w-[1200px]">
-          <div className="text-center mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-            >
-              Why Join Us
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-lg text-gray-500 max-w-2xl mx-auto"
-            >
-              At Setu Corporation, we believe that taking care of our team is just as important as taking care of the earth.
-            </motion.p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="p-8 border border-gray-100 rounded-lg hover:shadow-xl transition-shadow bg-gray-50"
-              >
-                <div className="w-16 h-16 bg-[#9DCC46]/10 text-[#9DCC46] rounded-2xl flex items-center justify-center mb-6">
-                  {benefit.icon}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-24 px-6 bg-[#f4f8ec]">
-        <div className="container mx-auto max-w-[1000px]">
-          <div className="text-center mb-16">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
-            >
-              Openings
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="text-lg text-gray-500 max-w-2xl mx-auto"
-            >
-              Explore exciting career opportunities at Shetu Corporation Limited. Join a dynamic team dedicated to transforming agriculture 
-              in Bangladesh through innovation and sustainability.
-            </motion.p>
-          </div>
-
-          <div className="space-y-6">
-            {jobOpenings.map((job, index) => (
-              <motion.div
-                key={job.id}
+      {whyJoinUs && (
+        <section className="py-24 px-6 bg-white">
+          <div className="container mx-auto max-w-[1200px]">
+            <div className="text-center mb-16">
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+                className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
               >
-                <div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{job.title}</h3>
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 font-medium">
-                    <span className="flex items-center gap-1.5">
-                      <Users size={16} />
-                      {job.department}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Globe size={16} />
-                      {job.location}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Clock size={16} />
-                      {job.type}
-                    </span>
+                {whyJoinUs.title}
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-lg text-gray-500 max-w-2xl mx-auto"
+              >
+                {whyJoinUs.sub_title}
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {dynamicBenefits.map((benefit, index) => (
+                <motion.div
+                  key={benefit.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="p-8 border border-gray-100 rounded-lg hover:shadow-xl transition-shadow bg-gray-50"
+                >
+                  <div className="w-16 h-16 bg-[#9DCC46]/10 text-[#9DCC46] rounded-2xl flex items-center justify-center mb-6">
+                    {benefitsIcons[benefit.title] || <Sprout className="w-8 h-8 text-[#9DCC46]" />}
                   </div>
-                </div>
-                <button className="px-8 py-3 bg-gray-900 text-white rounded-full font-bold hover:bg-[#9DCC46] hover:text-gray-900 transition-colors whitespace-nowrap">
-                  Apply Now
-                </button>
-              </motion.div>
-            ))}
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">{benefit.title}</h3>
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {openingsSection && (
+        <section className="py-24 px-6 bg-[#f4f8ec]">
+          <div className="container mx-auto max-w-[1000px]">
+            <div className="text-center mb-16">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
+              >
+                {openingsSection.title}
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="text-lg text-gray-500 max-w-2xl mx-auto"
+              >
+                {openingsSection.short_description || openingsSection.description}
+              </motion.p>
+            </div>
+
+            <div className="space-y-6">
+              {jobOpenings.map((job, index) => (
+                <motion.div
+                  key={job.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
+                >
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{job.title}</h3>
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 font-medium">
+                      <span className="flex items-center gap-1.5">
+                        <Users size={16} />
+                        {job.department}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Globe size={16} />
+                        {job.location}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Clock size={16} />
+                        {job.type}
+                      </span>
+                    </div>
+                  </div>
+                  <button className="px-8 py-3 bg-gray-900 text-white rounded-full font-bold hover:bg-[#9DCC46] hover:text-gray-900 transition-colors whitespace-nowrap">
+                    Apply Now
+                  </button>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-8 md:py-20 px-6 bg-white">
         <div className="container mx-auto max-w-[1200px]">

@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import ContactSection from "../components/Home/ContactSection";
 import { MapPin, Clock, Globe } from "lucide-react";
 
-export default function ContactContent() {
+export default function ContactContent({ settings }) {
   return (
     <>
       {/* Hero Section */}
@@ -43,7 +43,7 @@ export default function ContactContent() {
 
       <main className="flex-grow">
         <div className="-mt-16 relative z-20">
-          <ContactSection />
+          <ContactSection settings={settings} />
         </div>
 
         {/* Global Presence & Map Section */}
@@ -65,7 +65,7 @@ export default function ContactContent() {
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* <div className="grid lg:grid-cols-3 gap-8 mb-16">
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -107,9 +107,9 @@ export default function ContactContent() {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">Global Reach</h3>
                 <p className="text-gray-600 text-sm md:text-base leading-relaxed">Partnering with advanced suppliers from Japan, India, Thailand & Malaysia.</p>
               </motion.div>
-            </div>
+            </div> */}
 
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
@@ -117,14 +117,14 @@ export default function ContactContent() {
               className="w-full h-[500px] rounded-3xl overflow-hidden shadow-2xl border border-gray-100 relative bg-gray-200 group"
             >
               <div className="absolute inset-0 bg-gradient-to-tr from-[#9DCC46]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none z-10"></div>
-              
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.036944850383!2d90.3654215!3d23.74705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b33cffc3fb%3A0x4a826f475fd312af!2sDhanmondi%2C%20Dhaka%201205%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1713430154382!5m2!1sen!2sus" 
-                width="100%" 
-                height="100%" 
-                style={{ border: 0 }} 
-                allowFullScreen="" 
-                loading="lazy" 
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14608.036944850383!2d90.3654215!3d23.74705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b33cffc3fb%3A0x4a826f475fd312af!2sDhanmondi%2C%20Dhaka%201205%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1713430154382!5m2!1sen!2sus"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen=""
+                loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 className="grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
               ></iframe>

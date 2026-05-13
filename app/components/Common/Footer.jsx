@@ -1,4 +1,4 @@
-"use client";
+
 
 import Image from "next/image";
 import { Phone, Mail } from "lucide-react";
@@ -11,8 +11,38 @@ import {
 } from "react-icons/fa";
 import { FaX } from "react-icons/fa6";
 import Link from "next/link";
+import { getSettings } from "@/lib/fetchApis";
+import { getMediaLinkByMetaName, getMetaValueByMetaName } from "@/utils/metaHelpers";
+import { BASE_URL } from "@/lib/baseUrl";
 
-const Footer = () => {
+const Footer = async () => {
+  const settings = await getSettings();
+
+  const phone = getMetaValueByMetaName(settings, "company_phone") || "";
+  const company_phone_2_Fax = getMetaValueByMetaName(settings, "company_phone_2") || "";
+  const slogan = getMetaValueByMetaName(settings, "slogan") || "";
+
+  const company_email = getMetaValueByMetaName(settings, "company_email") || "";
+  const facebookLink = getMetaValueByMetaName(settings, "facebook_url") || "#";
+  const linkedinLink = getMetaValueByMetaName(settings, "linkedin_url") || "#";
+  const instagramLink =
+    getMetaValueByMetaName(settings, "instagram_url") || "#";
+  const location = getMetaValueByMetaName(settings, "office_location") || "";
+
+  const footer_logo_path = getMediaLinkByMetaName(settings, "footer_logo");
+  const footer_logo_url = `${BASE_URL}${footer_logo_path}`;
+
+  const website_logo_path = getMediaLinkByMetaName(settings, "site_logoimg_id");
+  // const website_logo_url = `${BASE_URL}${website_logo_path}`;
+  const website_logo_url = `https://www.shetu.mathmozo.com/${website_logo_path}`;
+  const website_title_footer = getMetaValueByMetaName(settings, "website_title");
+  const site_name = getMetaValueByMetaName(settings, "site_name");
+  const footer_content =
+    getMetaValueByMetaName(settings, "bottom_footer_content") || "";
+
+  // console.log("website_logo_url", website_logo_url)
+
+
   return (
     <footer className="relative pt-10 md:pt-24 pb-14 overflow-hidden text-white">
       {/* Background */}
@@ -37,19 +67,19 @@ const Footer = () => {
 
           {/* Logo + Contact */}
           <div>
-             {/* Logo */}
-        <Link href="/" className="flex items-center gap-1">
-          <Image
-            src="/images/logo-final.png"
-            alt="Shetu Corporation Logo"
-            width={65}
-            height={65}
-            priority
-          />
-          <span className="text-base uppercase font-bold  text-white">
-            Shetu Corporation Ltd
-          </span>
-        </Link>
+            {/* Logo */}
+            <Link href="/" className="flex items-center gap-1">
+              <Image
+                src={website_logo_url}
+                alt="Shetu Corporation Logo"
+                width={65}
+                height={65}
+                priority
+              />
+              <span className="text-base uppercase font-bold  text-white">
+                {site_name}
+              </span>
+            </Link>
 
             <div className="space-y-4 mt-3">
               <p className="flex items-center gap-3 text-[15px] md:text-base text-white">
@@ -57,21 +87,23 @@ const Footer = () => {
                 justify-center">
                   <Phone className="w-4 h-4 text-white" />
                 </span>
-                +880-2-7913081
+                {/* +880-2-7913081 */}
+                {phone}
               </p>
 
               <p className="flex items-center gap-3 text-[15px] md:text-base text-white">
                 <span className="w-10 h-10 rounded-full flex items-center justify-center">
                   <Mail className="w-4 h-4 text-white" />
                 </span>
-                info@shetucorporation.com
+                {company_email}
               </p>
 
               <p className="flex items-center gap-3 text-[15px] md:text-base text-white">
                 <span className="w-10 h-10 rounded-full  flex items-center justify-center">
                   <FaX className="w-4 h-4 text-white" />
                 </span>
-                Fax: +880-2-8829262, 7913085
+                {company_phone_2_Fax}
+                {/* Fax: +880-2-8829262, 7913085 */}
               </p>
             </div>
           </div>
@@ -149,7 +181,7 @@ const Footer = () => {
             </div>
 
             <p className="text-[15px] md:text-base text-white mb-6 leading-relaxed">
-              Rooted in nature’s care, we grow with integrity and harvest a healthier future.
+              {slogan}
             </p>
 
             {/* Social Icons */}
@@ -171,12 +203,11 @@ const Footer = () => {
 
         {/* Bottom */}
         <div className="pt-6 text-center">
-          <p className="text-[15px] text-white">
-            © 2026 All rights reserved.{" "}
-            <span className="text-white font-medium">
-              Shetu Corporation Ltd.
-            </span>
-          </p>
+          <div
+            className="text-[15px] text-white"
+            dangerouslySetInnerHTML={{ __html: footer_content }}
+          />
+
         </div>
       </div>
     </footer>

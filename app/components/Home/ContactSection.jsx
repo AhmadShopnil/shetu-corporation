@@ -3,8 +3,10 @@
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState } from "react";
+import { getMediaLinkByMetaName, getMetaValueByMetaName } from "@/utils/metaHelpers";
+import { BASE_URL } from "@/lib/baseUrl";
 
-export default function ContactSection() {
+export default function ContactSection({ settings }) {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -12,6 +14,29 @@ export default function ContactSection() {
     email: "",
     message: "",
   });
+
+  const phone = getMetaValueByMetaName(settings, "company_phone") || "";
+  const company_phone_2_Fax = getMetaValueByMetaName(settings, "company_phone_2") || "";
+  const third_phone = getMetaValueByMetaName(settings, "third_phone") || "";
+
+  const company_email = getMetaValueByMetaName(settings, "company_email") || "";
+  const facebookLink = getMetaValueByMetaName(settings, "facebook_url") || "#";
+  const linkedinLink = getMetaValueByMetaName(settings, "linkedin_url") || "#";
+  const instagramLink =
+    getMetaValueByMetaName(settings, "instagram_url") || "#";
+  const location = getMetaValueByMetaName(settings, "office_location") || "";
+
+  const footer_logo_path = getMediaLinkByMetaName(settings, "footer_logo");
+  const footer_logo_url = `${BASE_URL}${footer_logo_path}`;
+
+  const website_logo_path = getMediaLinkByMetaName(settings, "site_logoimg_id");
+  // const website_logo_url = `${BASE_URL}${website_logo_path}`;
+  const website_logo_url = `https://www.shetu.mathmozo.com/${website_logo_path}`;
+  const website_title_footer = getMetaValueByMetaName(settings, "website_title");
+  const site_name = getMetaValueByMetaName(settings, "site_name");
+  const footer_content =
+    getMetaValueByMetaName(settings, "bottom_footer_content") || "";
+
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -85,7 +110,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg md:text-xl font-bold mb-1 text-gray-900">Phone</h4>
-                  <p className="text-sm md:text-base text-gray-600">+880-2-7913081</p>
+                  <p className="text-sm md:text-base text-gray-600">{phone}</p>
                 </div>
               </div>
 
@@ -95,7 +120,7 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-lg md:text-xl font-bold mb-1 text-gray-900">Email</h4>
-                  <p className="text-sm md:text-base text-gray-600">info@shetucorporation.com</p>
+                  <p className="text-sm md:text-base text-gray-600">{company_email}</p>
                 </div>
               </div>
 
@@ -106,7 +131,7 @@ export default function ContactSection() {
                 <div>
                   <h4 className="text-lg md:text-xl font-bold mb-1 text-gray-900">Office Location</h4>
                   <p className="text-sm md:text-base text-gray-600 leading-relaxed">
-                    House # 52, Word # 01, Block # A, Madani Avenue, Dhaka
+                    {location}
                   </p>
                 </div>
               </div>
